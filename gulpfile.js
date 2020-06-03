@@ -42,7 +42,8 @@ let {src, dest} = require('gulp'),
   webphtml = require('gulp-webp-html'),
   webpcss = require('gulp-webpcss'),
   ttf2woff = require('gulp-ttf2woff'),
-  ttf2woff2 = require('gulp-ttf2woff2');
+  ttf2woff2 = require('gulp-ttf2woff2'),
+  plumber = require('gulp-plumber');
 
 
 function browserSync(params) {
@@ -57,6 +58,7 @@ function browserSync(params) {
 
 function html() {
   return src(path.src.html)
+    .pipe(plumber())
     .pipe(fileinclude())
     .pipe(webphtml())
     .pipe(dest(path.build.html))
@@ -65,6 +67,7 @@ function html() {
 
 function css() {
   return src(path.src.css)
+    .pipe(plumber())
     .pipe(
       less({
         outputStyle: 'expanded'
@@ -91,6 +94,7 @@ function css() {
 
 function js() {
   return src(path.src.js)
+    .pipe(plumber())
     .pipe(fileinclude())
     .pipe(dest(path.build.js))
     .pipe(
