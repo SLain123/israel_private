@@ -4,11 +4,20 @@
 
 // Common styles
 
+body {
+    box-sizing: border-box;
+    color: @black;
+    font-family: @sans;
+    font-weight: 400;
+    font-size: 15px;
+}
 
 // main blocks
 
-@import './blocks/main.less';
 @import 'vars.less';
+@import './blocks/container.less';
+@import './blocks/main.less';
+@import './blocks/menu.less';
 
 // other
 
