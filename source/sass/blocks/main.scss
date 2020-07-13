@@ -6,24 +6,24 @@
 
     &__bg {
         position: relative;
-        background-image: url(../img/bg.jpg);
+        background-image: url('../img/bg.jpg');
         background-repeat: no-repeat;
         background-position-y: -30px;
         background-position-x: center;
         display: block;
         margin-top: -50px;
 
-        @media screen and (max-width: $s-mon) {
+        @include _1024 {
             background-size: 1024px auto;   
             background-position-y: 0;
         }
 
-        @media screen and (max-width: $tb) {
+        @include _768 {
             background-size: 738px auto;   
         }
 
-        @media screen and (max-width: $s-tb) {
-            background-image: url(../img/bg_mobile.jpg);
+        @include _550 {
+            background-image: url('../img/bg_mobile.jpg');
             background-position-y: 45px;
             background-size: 870px;
         }
@@ -47,19 +47,19 @@
         padding: 510px 0 20px 0;
         margin: 0 auto;
 
-        @media screen and (max-width: $s-mon) {
+        @include _1024 {
            padding-top: 360px;
         }
 
-        @media screen and (max-width: $tb) {
+        @include _768 {
             padding-top: 240px;
         }
 
-        @media screen and (max-width: $s-tb) {
+        @include _550 {
             padding-top: 320px;
         }
 
-        @media screen and (max-width: $x-mob) {
+        @include _430 {
             padding-top: 345px;
             max-width: 288px;    
         }
@@ -75,15 +75,15 @@
         display: inline-block;
         margin-bottom: 35px;
 
-        @media screen and (max-width: $tb) {
+        @include _768 {
             margin-bottom: 20px;
         }
 
-        @media screen and (max-width: $s-tb) {
+        @include _550 {
             margin-bottom: 40px;
         }
 
-        @media screen and (max-width: $x-mob) {
+        @include _430 {
             font-size: 20px;
         }
     }
@@ -95,6 +95,11 @@
         flex-flow: column;
         align-items: center;
         width: 76px;
+        transition: ease-in-out $t-anim;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     // .main__scroll-tip

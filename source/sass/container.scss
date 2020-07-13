@@ -4,17 +4,17 @@
     max-width: 1366px;
     margin: 32px auto;
 
-    @media screen and (max-width: $tb) {
+    @include _768 {
         max-width: 768px;
         margin: 20px auto;
     }
 
-    @media screen and (max-width: $s-tb) {
+    @include _550 {
         max-width: 550px;
         margin: 10px auto;
     }
 
-    @media screen and (max-width: $x-mob) {
+    @include _430 {
         max-width: 430px;
         margin: 0;
     }

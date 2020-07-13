@@ -9,12 +9,12 @@
     position: relative;
     height: 52px;
 
-    @media screen and (max-width: $tb) {
+    @include _768 {
         padding: 0 13px;
         flex-flow: wrap;
     }
 
-    @media screen and (max-width: $mob) {
+    @include _320 {
         padding: 0 3px;
     }
    
@@ -26,15 +26,22 @@
         color: $black;
         white-space: nowrap;
 
-        @media screen and (max-width: $tb) {
+        transition: ease-in-out $t-anim;
+
+        &:hover {
+            color: black;
+            transform: scale(1.05);
+        }
+
+        @include _768 {
             order: 2;
         }
 
-        @media screen and (max-width: $s-tb) {
+        @include _550 {
             margin-left: 55px;
         }
 
-        @media screen and (max-width: $x-mob) {
+        @include _430 {
             margin-left: auto;
             font-size: 14px;
         }
@@ -43,15 +50,17 @@
     // .menu__logo-link
 
     &__logo-link {
-        @media screen and (max-width: $s-tb) {
+        cursor: pointer;
+
+        @include _550 {
             margin: 20px 50px 0 0;
         }
 
-        @media screen and (max-width: $x-mob) {
+        @include _430 {
             margin: 20px 14px 0 0;
         }
 
-        @media screen and (max-width: $xs-mob) {
+        @include _360 {
             margin: 25px 5px 0 0;
         }
     }
@@ -62,7 +71,7 @@
         width: 137px;
         height: 48px;
 
-        @media screen and (max-width: $mob) {
+        @include _320 {
             width: 120px;
             height: 42px;
         }
@@ -84,17 +93,23 @@
         text-transform: uppercase;
         cursor: pointer;
         white-space: nowrap;
+        transition: ease-in-out $t-anim;
 
-        @media screen and (max-width: $tb) {
+        &:hover {
+            color: black;
+            transform: scale(1.05);
+        }
+
+        @include _768 {
             order: 3;
         }
 
-        @media screen and (max-width: $s-tb) {
+        @include _550 {
             margin-left: auto;
             margin-top: -16px;
         }
 
-        @media screen and (max-width: $x-mob) {
+        @include _430 {
             font-size: 14px;
             text-transform: none;
         }
