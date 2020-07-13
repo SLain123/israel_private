@@ -1,0 +1,21 @@
+// main: style.scss
+
+.container {
+    max-width: 1366px;
+    margin: 32px auto;
+
+    @media screen and (max-width: $tb) {
+        max-width: 768px;
+        margin: 20px auto;
+    }
+
+    @media screen and (max-width: $s-tb) {
+        max-width: 550px;
+        margin: 10px auto;
+    }
+
+    @media screen and (max-width: $x-mob) {
+        max-width: 430px;
+        margin: 0;
+    }
+}

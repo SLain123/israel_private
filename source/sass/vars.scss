@@ -7,6 +7,21 @@ $yellow: #ffc341;
 $grad: linear-gradient(NaNdeg, #ffc341 0%, #ffd701 96%);
 
 //fonts
-$rale: 'Raleway';
-$sans: 'FiraSans';
-$mont: 'Montserrat';
+$rale: 'Raleway', 'Arial', 'sans-serif';
+$sans: 'FiraSans', 'Arial', 'sans-serif';
+$mont: 'Montserrat', 'Arial', 'sans-serif';
+
+//viewports
+
+$mon: 1366px;
+$s-mon: 1024px;
+$tb: 768px;
+$s-tb: 550px;
+$x-mob: 430px;
+$xs-mob: 360px;
+$mob: 320px;
+
+// retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

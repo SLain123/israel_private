@@ -4,24 +4,15 @@
 
 // Common styles
 
-@import 'vars.scss';
-@import './vendor/normalize.scss';
-
-body {
-    box-sizing: border-box;
-    color: $black;
-    font-family: $sans;
-    font-weight: 400;
-    font-size: 15px;
-}
+@import 'vars';
+@import './vendor/normalize';
+@import 'reset';
+@import 'container';
 
 // main blocks
-
-
-@import './blocks/container.scss';
-@import './blocks/main.scss';
-@import './blocks/menu.scss';
+@import './blocks/main';
+@import './blocks/menu';
 
 // other
 
-@import './fonts.scss';
+@import './fonts';

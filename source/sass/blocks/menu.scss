@@ -7,6 +7,16 @@
     padding: 0 114px;
     z-index: 1;
     position: relative;
+    height: 52px;
+
+    @media screen and (max-width: $tb) {
+        padding: 0 13px;
+        flex-flow: wrap;
+    }
+
+    @media screen and (max-width: $mob) {
+        padding: 0 3px;
+    }
    
     // .menu__number
 
@@ -14,11 +24,49 @@
         font-weight: 500;
         text-decoration: none;
         color: $black;
+        white-space: nowrap;
+
+        @media screen and (max-width: $tb) {
+            order: 2;
+        }
+
+        @media screen and (max-width: $s-tb) {
+            margin-left: 55px;
+        }
+
+        @media screen and (max-width: $x-mob) {
+            margin-left: auto;
+            font-size: 14px;
+        }
+    }
+
+    // .menu__logo-link
+
+    &__logo-link {
+        @media screen and (max-width: $s-tb) {
+            margin: 20px 50px 0 0;
+        }
+
+        @media screen and (max-width: $x-mob) {
+            margin: 20px 14px 0 0;
+        }
+
+        @media screen and (max-width: $xs-mob) {
+            margin: 25px 5px 0 0;
+        }
     }
 
     // .menu__logo
 
     &__logo {
+        width: 137px;
+        height: 48px;
+
+        @media screen and (max-width: $mob) {
+            width: 120px;
+            height: 42px;
+        }
+    
     }
 
     // .menu__ring-me
@@ -35,5 +83,20 @@
         border-bottom: 1px dashed $black;
         text-transform: uppercase;
         cursor: pointer;
+        white-space: nowrap;
+
+        @media screen and (max-width: $tb) {
+            order: 3;
+        }
+
+        @media screen and (max-width: $s-tb) {
+            margin-left: auto;
+            margin-top: -16px;
+        }
+
+        @media screen and (max-width: $x-mob) {
+            font-size: 14px;
+            text-transform: none;
+        }
     }
 }
