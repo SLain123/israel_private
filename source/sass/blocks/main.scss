@@ -6,10 +6,17 @@
 
   &__bg {
     position: relative;
+    background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
     background-position-y: -30px;
     background-position-x: center;
     display: block;
+    background-size: 1366px;
+
+    @include retina {
+      background-image: url("../img/bg@2x.jpg");
+      background-size: 1366px;
+    }
 
     @include _1024 {
       background-size: 1024px auto;
@@ -17,8 +24,13 @@
     }
 
     @include _768 {
+      background-image: url("../img/bg_mobile.jpg");
       background-size: 880px;
       background-position-y: 20px;
+
+      @include retina {
+        background-image: url("../img/bg_mobile@2x.jpg");
+      }
     }
   }
 
@@ -79,56 +91,14 @@
   // .main__scroll-img
 
   &__scroll-img {
+    background-image: url("../img/mouse.png");
     background-repeat: no-repeat;
     background-position-x: 29px;
     background-position-y: 25px;
-  }
-}
-
-body.webp .main__bg {
-  background-image: url("../img/bg.webp");
-
-  @include retina {
-    background-image: url("../img/bg@2.webp");
-  }
-
-  @include _768 {
-    background-image: url("../img/bg_mobile.webp");
+    background-size: 19px;
 
     @include retina {
-      background-image: url("../img/bg_mobile@2.webp");
+      background-image: url("../img/mouse@2x.png");
     }
-  }
-}
-
-body.no-webp .main__bg {
-  background-image: url("../img/bg.jpg");
-
-  @include retina {
-    background-image: url("../img/bg@2.jpg");
-  }
-
-  @include _768 {
-    background-image: url("../img/bg_mobile.jpg");
-
-    @include retina {
-      background-image: url("../img/bg_mobile@2.jpg");
-    }
-  }
-}
-
-body.webp .main__scroll-img {
-  background-image: url("../img/mouse.webp");
-
-  @include retina {
-    background-image: url("../img/mouse@2.webp");
-  }
-}
-
-body.no-webp .main__scroll-img {
-  background-image: url("../img/mouse.png");
-
-  @include retina {
-    background-image: url("../img/mouse@2.png");
   }
 }
