@@ -1,5 +1,3 @@
-'use strict';
-
 // JS-ФУНКЦИЯ ОПРЕДЕЛЕНИЯ ПОДДЕРЖКИ WEBP
 function testWebP(callback) {
 
@@ -18,4 +16,3 @@ function testWebP(callback) {
   document.querySelector('body').classList.add('no-webp');
   }
   });
- // Подключение скрипта для проверки поддержки webp формата и выбора правильного формата в css;
