@@ -1,21 +1,12 @@
 // main: style.scss
 
 .container {
-    max-width: 1366px;
-    margin: 32px auto;
+  max-width: 1366px;
+  margin: 32px auto;
 
-    @include _768 {
-        max-width: 768px;
-        margin: 20px auto;
-    }
+  @include _768 {
+    max-width: 768px;
+    margin: 15px auto;
+  }
 
-    @include _550 {
-        max-width: 550px;
-        margin: 10px auto;
-    }
-
-    @include _430 {
-        max-width: 430px;
-        margin: 0;
-    }
 }

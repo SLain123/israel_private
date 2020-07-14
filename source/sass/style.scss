@@ -4,16 +4,16 @@
 
 // Common styles
 
-@import 'vars';
-@import './vendor/normalize';
-@import 'reset';
-@import 'mixins';
-@import 'container';
+@import "vars";
+@import "./vendor/normalize";
+@import "reset";
+@import "mixins";
+@import "container";
 
 // main blocks
-@import './blocks/main';
-@import './blocks/menu';
+@import "./blocks/main";
+@import "./blocks/menu";
 
 // other
 
-@import './fonts';
+@import "./fonts";

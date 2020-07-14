@@ -1,117 +1,91 @@
 // main: ../style.scss
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 114px;
-    z-index: 1;
-    position: relative;
-    height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 110px;
+  z-index: 1;
+  position: relative;
+  height: 52px;
+
+  @include _768 {
+    padding: 0 13px;
+    flex-flow: column wrap;
+    align-items: space-between;
+    justify-content: start;
+  }
+
+  @include _320 {
+    padding: 0;
+  }
+
+  // .menu__number
+
+  &__number {
+    font-weight: 500;
+    text-decoration: none;
+    color: $black;
+    white-space: nowrap;
+
+    transition: ease-in-out $t-anim;
+
+    &:hover {
+      color: black;
+      transform: scale(1.05);
+    }
 
     @include _768 {
-        padding: 0 13px;
-        flex-flow: wrap;
+      order: 2;
+      font-size: 14px;
+    }
+  }
+
+  // .menu__logo-link
+
+  &__logo-link {
+    cursor: pointer;
+  }
+
+  // .menu__logo
+
+  &__logo {
+    width: 137px;
+    height: 48px;
+
+    @include _768 {
+      width: 120px;
+      height: 42px;
+      margin-right: 30px;
+    }
+  }
+
+  // .menu__ring-me
+
+  &__ring-me {
+    border: none;
+    height: 22px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: $black;
+    font-family: $sans;
+    border-bottom: 1px dashed $black;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: ease-in-out $t-anim;
+
+    &:hover {
+      color: black;
+      transform: scale(1.05);
     }
 
-    @include _320 {
-        padding: 0 3px;
+    @include _768 {
+      order: 3;
+      font-size: 14px;
+      text-transform: none;
+      margin-left: 15px;
     }
-   
-    // .menu__number
-
-    &__number {
-        font-weight: 500;
-        text-decoration: none;
-        color: $black;
-        white-space: nowrap;
-
-        transition: ease-in-out $t-anim;
-
-        &:hover {
-            color: black;
-            transform: scale(1.05);
-        }
-
-        @include _768 {
-            order: 2;
-        }
-
-        @include _550 {
-            margin-left: 55px;
-        }
-
-        @include _430 {
-            margin-left: auto;
-            font-size: 14px;
-        }
-    }
-
-    // .menu__logo-link
-
-    &__logo-link {
-        cursor: pointer;
-
-        @include _550 {
-            margin: 20px 50px 0 0;
-        }
-
-        @include _430 {
-            margin: 20px 14px 0 0;
-        }
-
-        @include _360 {
-            margin: 25px 5px 0 0;
-        }
-    }
-
-    // .menu__logo
-
-    &__logo {
-        width: 137px;
-        height: 48px;
-
-        @include _320 {
-            width: 120px;
-            height: 42px;
-        }
-    
-    }
-
-    // .menu__ring-me
-
-    &__ring-me {
-        border: none;
-        outline: none;
-        background: none;
-        font-size: 15px;
-        font-weight: 500;
-        color: $black;
-        font-family: $sans;
-        padding: 0;
-        border-bottom: 1px dashed $black;
-        text-transform: uppercase;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: ease-in-out $t-anim;
-
-        &:hover {
-            color: black;
-            transform: scale(1.05);
-        }
-
-        @include _768 {
-            order: 3;
-        }
-
-        @include _550 {
-            margin-left: auto;
-            margin-top: -16px;
-        }
-
-        @include _430 {
-            font-size: 14px;
-            text-transform: none;
-        }
-    }
+  }
 }

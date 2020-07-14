@@ -1,43 +1,25 @@
 //main style.scss
 
 @mixin _1366 {
-    @media (max-width: 1366px){
-        @content;
-    }
+  @media (max-width: 1366px) {
+    @content;
+  }
 }
 
 @mixin _1024 {
-    @media (max-width: 1024px){
-        @content;
-    }
+  @media (max-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin _768 {
-    @media (max-width: 768px){
-        @content;
-    }
-}
-
-@mixin _550 {
-    @media (max-width: 550px){
-        @content;
-    }
-}
-
-@mixin _430 {
-    @media (max-width: 430px){
-        @content;
-    }
-}
-
-@mixin _360 {
-    @media (max-width: 360px){
-        @content;
-    }
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 @mixin _320 {
-    @media (max-width: 320px){
-        @content;
-    }
+  @media (max-width: 320px) {
+    @content;
+  }
 }

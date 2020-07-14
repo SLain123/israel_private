@@ -1,123 +1,89 @@
 // main: ../style.scss
 
 .main {
+  height: 906px;
+  // .main__bg
+
+  &__bg {
+    position: relative;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position-y: -30px;
+    background-position-x: center;
+    display: block;
+
+    @include _1024 {
+      background-size: 1024px auto;
+      background-position-y: 0;
+    }
+
+    @include _768 {
+      background-image: url("../img/bg_mobile.jpg");
+      background-size: 880px;
+      background-position-y: 20px;
+    }
+  }
+
+  // .main__body
+
+  &__body {
+    position: relative;
     height: 906px;
-    // .main__bg
+  }
 
-    &__bg {
-        position: relative;
-        background-image: url('../img/bg.jpg');
-        background-repeat: no-repeat;
-        background-position-y: -30px;
-        background-position-x: center;
-        display: block;
-        margin-top: -50px;
+  // .main__content
 
-        @include _1024 {
-            background-size: 1024px auto;   
-            background-position-y: 0;
-        }
+  &__content {
+    max-width: 343px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 435px 0 0 0;
+    margin: 0 auto;
 
-        @include _768 {
-            background-size: 738px auto;   
-        }
-
-        @include _550 {
-            background-image: url('../img/bg_mobile.jpg');
-            background-position-y: 45px;
-            background-size: 870px;
-        }
+    @include _1024 {
+      padding-top: 300px;
     }
 
-    // .main__body
-
-    &__body {
-        position: relative;
-        height: 906px;
+    @include _768 {
+      padding-top: 245px;
     }
+  }
 
-    // .main__content 
+  // .main__title
 
-    &__content {
-        max-width: 343px;
-        text-align: center;
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        padding: 510px 0 20px 0;
-        margin: 0 auto;
+  &__sub-title {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 35px;
 
-        @include _1024 {
-           padding-top: 360px;
-        }
-
-        @include _768 {
-            padding-top: 240px;
-        }
-
-        @include _550 {
-            padding-top: 320px;
-        }
-
-        @include _430 {
-            padding-top: 345px;
-            max-width: 288px;    
-        }
+    @include _768 {
+      margin-bottom: 20px;
+      font-size: 20px;
     }
+  }
 
-    // .main__title
+  // .main__scroll-link
 
-    &__sub-title {
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-        color: #ffffff;
-        font-size: 24px;
-        font-weight: 700;
-        display: inline-block;
-        margin-bottom: 35px;
+  &__scroll-link {
+    transition: ease-in-out $t-anim;
+    cursor: pointer;
 
-        @include _768 {
-            margin-bottom: 20px;
-        }
-
-        @include _550 {
-            margin-bottom: 40px;
-        }
-
-        @include _430 {
-            font-size: 20px;
-        }
+    &:hover {
+      transform: scale(1.1);
     }
+  }
 
-    // .main__scroll-body
+  // .main__scroll-img
 
-    &__scroll-body {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        width: 76px;
-        transition: ease-in-out $t-anim;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-
-    // .main__scroll-tip
-
-    &__scroll-tip {
-        display: inline-block;
-        border: dashed white 1px;
-        padding: 11px;
-        border-radius: 50px;
-        cursor: pointer;
-    }
-
-    // .main__scroll-tail
-
-    &__scroll-tail {
-        width: 2px;
-        height: 56px;
-        background-color: white;
-    }
+  &__scroll-img {
+    background-image: url("../img/mouse.png");
+    background-repeat: no-repeat;
+    background-position-x: 29px;
+    background-position-y: 25px;
+  }
 }
-
