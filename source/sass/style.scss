@@ -9,10 +9,12 @@
 @import "reset";
 @import "mixins";
 @import "container";
+@import "overlay";
 
 // main blocks
 @import "./blocks/main";
 @import "./blocks/menu";
+@import "./blocks/modal-ring";
 
 // other
 

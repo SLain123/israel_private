@@ -3,8 +3,6 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -18,6 +16,10 @@ body {
   font-family: $sans;
   font-weight: 400;
   font-size: 15px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 // Убирает свечение при тач событиях у интерактивных элеметов
@@ -26,20 +28,11 @@ body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
 body {
   min-height: 100vh;
   overflow: auto;
 
   background-color: #ffffff;
-
 }
 
 img,
@@ -58,7 +51,6 @@ textarea {
 /* :focus {
   outline: none;
 } */
-
 
 // firefox placeholder \ invalid fix + ios bdrs
 input,
@@ -123,5 +115,5 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
   padding: 0;
   overflow: hidden;
   border: 0;
-  clip: rect(0 0 0 0)
+  clip: rect(0 0 0 0);
 }

@@ -1,0 +1,32 @@
+// main ../style.scss
+
+.modal-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 521px;
+  border: red 1px solid;
+  // .modal-ring__title
+
+  &__title {
+    font-size: 15px;
+  }
+
+  // .modal-ring__sub-title
+
+  &__sub-title {
+    font-size: 15px;
+  }
+
+  // .modal-ring__cls-btn
+
+  &__cls-btn {
+    font-size: 15px;
+  }
+}
+
+.modal-ring__form {
+  font-size: 15px;
+}
