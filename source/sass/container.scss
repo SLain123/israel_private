@@ -1,11 +1,23 @@
 // main: style.scss
 
 .container {
-  max-width: 1366px;
+  max-width: 1556px;
   margin: 32px auto;
+  width: 100%;
+  padding: 0 80px;
 
-  @include _768 {
+  @include w-1366 {
+    padding: 0 15px;
+  }
+
+  @include w-768 {
     max-width: 768px;
     margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  @include w-320 {
+    max-width: 320px;
+    padding: 0 3px;
   }
 }

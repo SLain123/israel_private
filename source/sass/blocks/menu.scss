@@ -9,14 +9,14 @@
   position: relative;
   height: 52px;
 
-  @include _768 {
+  @include w-768 {
     padding: 0 13px;
     flex-flow: column wrap;
     align-items: space-between;
     justify-content: start;
   }
 
-  @include _320 {
+  @include w-320 {
     padding: 0;
   }
 
@@ -32,19 +32,12 @@
 
     &:hover {
       color: black;
-      transform: scale(1.05);
     }
 
-    @include _768 {
+    @include w-768 {
       order: 2;
       font-size: 14px;
     }
-  }
-
-  // .menu__logo-link
-
-  &__logo-link {
-    cursor: pointer;
   }
 
   // .menu__logo
@@ -53,7 +46,7 @@
     width: 137px;
     height: 48px;
 
-    @include _768 {
+    @include w-768 {
       width: 120px;
       height: 42px;
       margin-right: 30px;
@@ -78,10 +71,9 @@
 
     &:hover {
       color: black;
-      transform: scale(1.05);
     }
 
-    @include _768 {
+    @include w-768 {
       order: 3;
       font-size: 14px;
       text-transform: none;
