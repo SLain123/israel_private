@@ -15,7 +15,6 @@
 
     @include retina {
       background-image: url("../img/bg@2x.jpg");
-      background-size: 1366px;
     }
 
     @include w-1024 {
@@ -97,5 +96,3 @@
     }
   }
 }
-
-

@@ -4,7 +4,11 @@
 $black: #484848;
 $blue: #1fc0fc;
 $yellow: #ffc341;
-$grad: linear-gradient(NaNdeg, #ffc341 0%, #ffd701 96%);
+$grad: linear-gradient(108.42deg, #ffc341 0%, #ffd701 96%);
+$white: #ffffff;
+$overlay: rgba(235, 235, 235, 0.95);
+$grey: #e3e3e3;
+$red: red;
 
 //fonts
 $rale: "Raleway", "Arial", "sans-serif";
@@ -25,4 +29,4 @@ $retina-dppx: 1.5dppx;
 
 // timers
 
-$t-anim: 0.2s;
+$t-anim: 0.4s;
