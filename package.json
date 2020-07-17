@@ -9,7 +9,7 @@
     "autoprefixer": "9.5.x",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "2.26.x",
-    "eslint": "4.16.0",
+    "eslint": "4.18.2",
     "eslint-config-htmlacademy": "0.4.x",
     "gulp": "4.0.x",
     "gulp-babel": "^8.0.0",
