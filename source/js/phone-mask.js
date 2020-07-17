@@ -1,7 +1,6 @@
 (function phoneMask() {
 
-  const inputs = document.querySelectorAll('.modal-ring__form input');
-  const phoneInput = inputs[1];
+  const phoneInput = document.querySelector('.modal-ring__phone');
 
 
   window.addEventListener("DOMContentLoaded", function() {
@@ -27,7 +26,7 @@
               return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
           });
           if (event.type == "blur") {
-              if (this.value.length == 2) this.value = ""
+              if (this.value.length === 2) this.value = ""
           } else setCursorPosition(this.value.length, this)
       };
 

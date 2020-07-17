@@ -1,13 +1,15 @@
 (function modalWindow() {
   const overlay = document.querySelector(".overlay");
-  const modalRing = document.querySelector(".modal-ring");
   const callMeBtn = document.querySelector(".menu__ring-me");
   const closeBtnModalRing = document.querySelector(".modal-ring__cls-btn-link");
-  const inputsFormAndCheckbox = document.querySelectorAll(
-    ".modal-ring__form input"
-  );
-  const lable = document.querySelector(".modal-ring__form label");
+  const closeBtnModalAccept = document.querySelector(".modal-accept__cls-btn-link");
+  const inputName = document.querySelector(".modal-ring__name");
+  const inputPhone = document.querySelector(".modal-ring__phone");
+  const checkbox = document.querySelector(".modal-ring__checkbox");
+  const label = document.querySelector(".modal-ring__form label");
   const errorMessages = document.querySelectorAll(".modal-ring__error-text");
+  const modalAccept = document.querySelector(".modal-accept");
+  const okBtn = document.querySelector('.modal-accept__btn-ok');
 
   // Функции отвечающие за отображение и скрытие модального окна
 
@@ -21,7 +23,7 @@
     body.style.paddingRight = `${padding}px`;
     body.classList.add("no-scroll");
 
-    inputsFormAndCheckbox[0].focus();
+    inputName.focus();
   };
 
   const hideModal = function () {
@@ -37,8 +39,8 @@
   };
 
   const checkClickOutOfBorder = function (evt) {
-    if (evt.target == overlay) {
-      hideModal();
+    if (evt.target === overlay) {
+      hideAccept();
     }
   };
 
@@ -51,32 +53,47 @@
   // Функция чистить форму после закрытия или отправки;
 
   const cleanForm = function () {
-    let name = inputsFormAndCheckbox[0];
-    let phone = inputsFormAndCheckbox[1];
-    let checkbox = inputsFormAndCheckbox[2];
-
-    name.value = "";
-    name.classList.remove("modal-ring__form_error");
-    name.classList.add("modal-ring__form_right");
-    phone.value = "";
-    phone.classList.remove("modal-ring__form_error");
-    phone.classList.add("modal-ring__form_right");
-    inputsFormAndCheckbox[2].checked = false;
-    lable.classList.remove("modal-ring__form_error-box");
+    inputName.value = "";
+    inputName.classList.remove("modal-ring__form_error");
+    inputName.classList.add("modal-ring__form_right");
+    inputPhone.value = "";
+    inputPhone.classList.remove("modal-ring__form_error");
+    inputPhone.classList.add("modal-ring__form_right");
+    checkbox.checked = false;
+    label.classList.remove("modal-ring__form_error-box");
 
     for (let mess of errorMessages) {
       mess.classList.remove("modal-ring__error-text_visible");
     }
   };
 
+  // Функция активации чекбокса
+
+  const activateCheckBox = function () {
+    if (checkbox.checked) {
+      checkbox.checked = false;
+    } else checkbox.checked = true;
+  };
+
+  // Функции скрытия модального окна "Заявка принята"
+
+  const hideAccept = function() {
+    modalAccept.classList.remove("modal-accept_visible");
+    modalAccept.classList.add("modal-accept_hide");
+    hideModal();
+  }
+
   // События отвечающие за вызов функций отображения и скрытия модального окна
 
   callMeBtn.addEventListener("click", displayModal);
   window.addEventListener("keydown", function (evt) {
-    if (evt.key == "Escape") {
+    if (evt.key === "Escape") {
       hideModal();
     }
   });
   closeBtnModalRing.addEventListener("click", hideModal);
-  overlay.addEventListener("click", checkClickOutOfBorder);
+  closeBtnModalAccept.addEventListener("click", hideAccept);
+  overlay.addEventListener("mousedown", checkClickOutOfBorder);
+  label.addEventListener("click", activateCheckBox);
+  okBtn.addEventListener('click', hideAccept);
 })();

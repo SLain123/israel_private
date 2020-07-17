@@ -1,22 +1,44 @@
 <div class="modal-ring">
   <div class="modal-ring__container">
     <p class="modal-ring__title">Заказать звонок</p>
-    <p class="modal-ring__sub-title">Оставьте ваши контактные данные, мы свяжемся
-      с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос! </p>
-    <form action="post" class="modal-ring__form">
-      <p class="modal-ring__error-text">Ошибка: Не верный формат. </p>
-      <input class="modal-ring__form_right" type="text" placeholder="Имя">
-      <input class="modal-ring__form_right" type="text" placeholder="Телефон" value="">
+    <p class="modal-ring__sub-title">
+      Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня
+      и обязательно поможем найти ответ на ваш вопрос!
+    </p>
+    <form action="#" method="POST" class="modal-ring__form">
       <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
-      <button type="button">перезвоните мне</button>
+      <input
+        class="modal-ring__name modal-ring__form_right"
+        type="text"
+        placeholder="Имя"
+        name="Имя клиента"
+      />
+      <input
+        class="modal-ring__phone modal-ring__form_right"
+        type="text"
+        placeholder="Телефон"
+        name="Телефон клиента"
+      />
+      <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
+      <button type="button" aria-label="Перезвоните мне">
+        перезвоните мне
+      </button>
       <div class="modal-ring__check">
-        <input type="checkbox" id='accept'>
-        <label class="modal-ring__form_right-box" for="accept">Нажимая на кнопку, вы даёте согласие на обработку персональных данных</label>
+        <input type="checkbox" id="accept" class="modal-ring__checkbox" />
+        <label class="modal-ring__form_right-box" for="accept"
+          >Нажимая на кнопку, вы даёте согласие на обработку персональных
+          данных</label
+        >
       </div>
     </form>
-    <a href="#" class="modal-ring__cls-btn-link">
-      <svg width="17" viewBox="0 0 18 17" fill="red" class="modal-ring__cls-btn-img">
-        <use xlink:href="#form-close"/>
+    <a class="modal-ring__cls-btn-link" aria-label="Закрыть">
+      <svg
+        width="17"
+        viewBox="0 0 18 17"
+        fill="none"
+        class="modal-ring__cls-btn-img"
+      >
+        <use xlink:href="#form-close" />
       </svg>
     </a>
   </div>

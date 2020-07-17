@@ -16,6 +16,7 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
 var fileinclude = require('gulp-file-include');
+var babel = require('gulp-babel');
 
 gulp.task("css", function () {
   return gulp
@@ -115,6 +116,9 @@ gulp.task("js", function () {
     .src("source/js/script.js")
     .pipe(plumber())
     .pipe(fileinclude())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(gulp.dest("build/js"));
 })
 

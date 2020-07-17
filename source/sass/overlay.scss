@@ -9,7 +9,7 @@
   top: 0;
   text-align: center;
   vertical-align: middle;
-  overflow: auto;
+  overflow: scroll;
   z-index: 2;
 }
 
@@ -22,5 +22,6 @@
 }
 
 .no-scroll {
+  height: 100%;
   overflow: hidden;
 }

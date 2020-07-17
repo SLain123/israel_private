@@ -1,176 +1,190 @@
 'use strict';
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 (function modalWindow() {
-  const overlay = document.querySelector(".overlay");
-  const modalRing = document.querySelector(".modal-ring");
-  const callMeBtn = document.querySelector(".menu__ring-me");
-  const closeBtnModalRing = document.querySelector(".modal-ring__cls-btn-link");
-  const inputsFormAndCheckbox = document.querySelectorAll(
-    ".modal-ring__form input"
-  );
-  const lable = document.querySelector(".modal-ring__form label");
-  const errorMessages = document.querySelectorAll(".modal-ring__error-text");
+  var overlay = document.querySelector(".overlay");
+  var callMeBtn = document.querySelector(".menu__ring-me");
+  var closeBtnModalRing = document.querySelector(".modal-ring__cls-btn-link");
+  var closeBtnModalAccept = document.querySelector(".modal-accept__cls-btn-link");
+  var inputName = document.querySelector(".modal-ring__name");
+  var inputPhone = document.querySelector(".modal-ring__phone");
+  var checkbox = document.querySelector(".modal-ring__checkbox");
+  var label = document.querySelector(".modal-ring__form label");
+  var errorMessages = document.querySelectorAll(".modal-ring__error-text");
+  var modalAccept = document.querySelector(".modal-accept");
+  var okBtn = document.querySelector('.modal-accept__btn-ok'); // Функции отвечающие за отображение и скрытие модального окна
 
-  // Функции отвечающие за отображение и скрытие модального окна
-
-  const displayModal = function () {
-    let body = document.querySelector("body");
-    let padding = findPadding();
-
+  var displayModal = function displayModal() {
+    var body = document.querySelector("body");
+    var padding = findPadding();
     overlay.classList.remove("overlay-hide");
     overlay.classList.add("overlay-visible");
-
-    body.style.paddingRight = `${padding}px`;
+    body.style.paddingRight = "".concat(padding, "px");
     body.classList.add("no-scroll");
-
-    inputsFormAndCheckbox[0].focus();
+    inputName.focus();
   };
 
-  const hideModal = function () {
-    let body = document.querySelector("body");
-
+  var hideModal = function hideModal() {
+    var body = document.querySelector("body");
     overlay.classList.add("overlay-hide");
     overlay.classList.remove("overlay-visible");
-
-    body.style.paddingRight = `0`;
+    body.style.paddingRight = "0";
     body.classList.remove("no-scroll");
-
     cleanForm();
   };
 
-  const checkClickOutOfBorder = function (evt) {
-    if (evt.target == overlay) {
-      hideModal();
+  var checkClickOutOfBorder = function checkClickOutOfBorder(evt) {
+    if (evt.target === overlay) {
+      hideAccept();
     }
-  };
+  }; // Функция высчитывает отступ равный скроллу браузера;
 
-  // Функция высчитывает отступ равный скроллу браузера;
 
-  const findPadding = function () {
+  var findPadding = function findPadding() {
     return window.innerWidth - document.documentElement.clientWidth;
-  };
+  }; // Функция чистить форму после закрытия или отправки;
 
-  // Функция чистить форму после закрытия или отправки;
 
-  const cleanForm = function () {
-    let name = inputsFormAndCheckbox[0];
-    let phone = inputsFormAndCheckbox[1];
-    let checkbox = inputsFormAndCheckbox[2];
+  var cleanForm = function cleanForm() {
+    inputName.value = "";
+    inputName.classList.remove("modal-ring__form_error");
+    inputName.classList.add("modal-ring__form_right");
+    inputPhone.value = "";
+    inputPhone.classList.remove("modal-ring__form_error");
+    inputPhone.classList.add("modal-ring__form_right");
+    checkbox.checked = false;
+    label.classList.remove("modal-ring__form_error-box");
 
-    name.value = "";
-    name.classList.remove("modal-ring__form_error");
-    name.classList.add("modal-ring__form_right");
-    phone.value = "";
-    phone.classList.remove("modal-ring__form_error");
-    phone.classList.add("modal-ring__form_right");
-    inputsFormAndCheckbox[2].checked = false;
-    lable.classList.remove("modal-ring__form_error-box");
+    var _iterator = _createForOfIteratorHelper(errorMessages),
+        _step;
 
-    for (let mess of errorMessages) {
-      mess.classList.remove("modal-ring__error-text_visible");
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var mess = _step.value;
+        mess.classList.remove("modal-ring__error-text_visible");
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
     }
-  };
+  }; // Функция активации чекбокса
 
-  // События отвечающие за вызов функций отображения и скрытия модального окна
+
+  var activateCheckBox = function activateCheckBox() {
+    if (checkbox.checked) {
+      checkbox.checked = false;
+    } else checkbox.checked = true;
+  }; // Функции скрытия модального окна "Заявка принята"
+
+
+  var hideAccept = function hideAccept() {
+    modalAccept.classList.remove("modal-accept_visible");
+    modalAccept.classList.add("modal-accept_hide");
+    hideModal();
+  }; // События отвечающие за вызов функций отображения и скрытия модального окна
+
 
   callMeBtn.addEventListener("click", displayModal);
   window.addEventListener("keydown", function (evt) {
-    if (evt.key == "Escape") {
+    if (evt.key === "Escape") {
       hideModal();
     }
   });
   closeBtnModalRing.addEventListener("click", hideModal);
-  overlay.addEventListener("click", checkClickOutOfBorder);
-})();
- // Скрипт открытия и закрытия модального окна;
+  closeBtnModalAccept.addEventListener("click", hideAccept);
+  overlay.addEventListener("mousedown", checkClickOutOfBorder);
+  label.addEventListener("click", activateCheckBox);
+  okBtn.addEventListener('click', hideAccept);
+})(); // Скрипт открытия и закрытия модального окна;
+
+
 (function phoneMask() {
-
-  const inputs = document.querySelectorAll('.modal-ring__form input');
-  const phoneInput = inputs[1];
-
-
-  window.addEventListener("DOMContentLoaded", function() {
+  var phoneInput = document.querySelector('.modal-ring__phone');
+  window.addEventListener("DOMContentLoaded", function () {
     function setCursorPosition(pos, elem) {
-        elem.focus();
-        if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
-        else if (elem.createTextRange) {
-            var range = elem.createTextRange();
-            range.collapse(true);
-            range.moveEnd("character", pos);
-            range.moveStart("character", pos);
-            range.select()
-        }
+      elem.focus();
+      if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select();
+      }
     }
 
     function mask(event) {
-          var matrix = "+7 (___) ___ __ __",
-              i = 0,
-              def = matrix.replace(/\D/g, ""),
-              val = this.value.replace(/\D/g, "");
-          if (def.length >= val.length) val = def;
-          this.value = matrix.replace(/./g, function(a) {
-              return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-          });
-          if (event.type == "blur") {
-              if (this.value.length == 2) this.value = ""
-          } else setCursorPosition(this.value.length, this)
-      };
+      var matrix = "+7 (___) ___ __ __",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, "");
+      if (def.length >= val.length) val = def;
+      this.value = matrix.replace(/./g, function (a) {
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+      });
 
-      phoneInput.addEventListener("input", mask, false);
-    });
+      if (event.type == "blur") {
+        if (this.value.length === 2) this.value = "";
+      } else setCursorPosition(this.value.length, this);
+    }
 
-})();
- // Скрипт для маски в поле ввода телефона;
+    ;
+    phoneInput.addEventListener("input", mask, false);
+  });
+})(); // Скрипт для маски в поле ввода телефона;
+
+
 (function validateAndSendForm() {
-  const sendBtn = document.querySelector(".modal-ring__form button");
-  const allInputs = document.querySelectorAll(".modal-ring__form input");
-  const customerName = allInputs[0];
-  const customerPhone = allInputs[1];
-  const checkboxRule = allInputs[2];
-  const lable = document.querySelector(".modal-ring__form label");
-  const errorMessages = document.querySelectorAll(".modal-ring__error-text");
-
-  // localStorage.clear() // раскоментировать чтобы почистить localStorage в случае ошибок связанных с храналищем;
-
+  var sendBtn = document.querySelector(".modal-ring__form button");
+  var inputName = document.querySelector('.modal-ring__name');
+  var inputPhone = document.querySelector('.modal-ring__phone');
+  var checkbox = document.querySelector('.modal-ring__checkbox');
+  var lable = document.querySelector(".modal-ring__form label");
+  var errorMessages = document.querySelectorAll(".modal-ring__error-text");
+  var modalAccept = document.querySelector(".modal-accept"); // localStorage.clear() // раскоментировать чтобы почистить localStorage в случае ошибок связанных с храналищем;
   // Проверяет инпут имя на валидность и меняет классы в случае ошибки;
 
-  const checkName = function () {
-    let errorText = errorMessages[0];
+  var checkName = function checkName() {
+    var errorText = errorMessages[0];
 
-    if (customerName.value != "") {
-      customerName.classList.add("modal-ring__form_right");
-      customerName.classList.remove("modal-ring__form_error");
+    if (inputName.value !== "") {
+      inputName.classList.add("modal-ring__form_right");
+      inputName.classList.remove("modal-ring__form_error");
       errorText.classList.remove("modal-ring__error-text_visible");
       return true;
     } else {
-      customerName.classList.remove("modal-ring__form_right");
-      customerName.classList.add("modal-ring__form_error");
+      inputName.classList.remove("modal-ring__form_right");
+      inputName.classList.add("modal-ring__form_error");
       errorText.classList.add("modal-ring__error-text_visible");
       return false;
     }
-  };
+  }; // Проверяет инпут телефон на валидность и меняет классы в случае ошибки;
 
-  // Проверяет инпут телефон на валидность и меняет классы в случае ошибки;
 
-  const checkPhone = function () {
-    let errorText = errorMessages[1];
+  var checkPhone = function checkPhone() {
+    var errorText = errorMessages[1];
 
-    if (customerPhone.value.length == 18) {
-      customerPhone.classList.add("modal-ring__form_right");
-      customerPhone.classList.remove("modal-ring__form_error");
+    if (inputPhone.value.length === 18) {
+      inputPhone.classList.add("modal-ring__form_right");
+      inputPhone.classList.remove("modal-ring__form_error");
       errorText.classList.remove("modal-ring__error-text_visible");
       return true;
     } else {
-      customerPhone.classList.remove("modal-ring__form_right");
-      customerPhone.classList.add("modal-ring__form_error");
+      inputPhone.classList.remove("modal-ring__form_right");
+      inputPhone.classList.add("modal-ring__form_error");
       errorText.classList.add("modal-ring__error-text_visible");
       return false;
     }
-  };
+  }; // Проверяет чекбокс на установленную галочку и меняет классы в случае ошибки;
 
-  // Проверяет чекбокс на установленную галочку и меняет классы в случае ошибки;
 
-  const checkRuleBox = function () {
-    if (checkboxRule.checked) {
+  var checkRuleBox = function checkRuleBox() {
+    if (checkbox.checked) {
       lable.classList.add("modal-ring__form_right-box");
       lable.classList.remove("modal-ring__form_error-box");
     } else {
@@ -178,64 +192,66 @@
       lable.classList.remove("modal-ring__form_right-box");
     }
 
-    return checkboxRule.checked;
-  };
+    return checkbox.checked;
+  }; // Общая функция проверки валидности всех инпутов в форме, запускает подфункции проверки
 
-  // Общая функция проверки валидности всех инпутов в форме, запускает подфункции проверки
 
-  const checkValidateAll = function () {
-    let result = true;
+  var checkValidateAll = function checkValidateAll() {
+    var result = true;
 
-    if (checkName() == false) {
+    if (checkName() === false) {
       result = false;
     }
 
-    if (checkPhone() == false) {
+    if (checkPhone() === false) {
       result = false;
     }
 
-    if (checkRuleBox() == false) {
+    if (checkRuleBox() === false) {
       result = false;
     }
+
     return result;
-  };
+  }; // Функция добавляет данные из формы в localStorage
 
-  // Функция добавляет данные из формы в localStorage
 
-  const addDateToStorage = function () {
-    let infoObj = {
-      name: customerName.value,
-      phone: customerPhone.value,
+  var addDateToStorage = function addDateToStorage() {
+    var infoObj = {
+      name: inputName.value,
+      phone: inputPhone.value
     };
-    let rightFormat = JSON.stringify(infoObj);
-    let freeStore = checkFreeKey(0);
-
+    var rightFormat = JSON.stringify(infoObj);
+    var freeStore = checkFreeKey(0);
     localStorage.setItem(freeStore, rightFormat);
-  };
+  }; // Подфункция вычисляет свободную ячейку для записи в localStorage;
 
-  // Подфункция вычисляет свободную ячейку для записи в localStorage;
 
-  const checkFreeKey = function (num) {
-    let result = 0;
+  var checkFreeKey = function checkFreeKey(num) {
+    var result = 0;
 
     function findNumber(num) {
-      if (localStorage.getItem(num) == null) {
+      if (localStorage.getItem(num) === null) {
         result = num;
       } else {
         findNumber(num + 1);
       }
     }
+
     findNumber(num);
-
     return result;
-  };
+  }; // Функция отображения модального окна "Заявка принята"
 
-  // Событие на кнопку отправки
+
+  var displayAcceptModal = function displayAcceptModal() {
+    modalAccept.classList.add("modal-accept_visible");
+    modalAccept.classList.remove("modal-accept_hide");
+  }; // Событие на кнопку отправки
+
 
   sendBtn.addEventListener("click", function () {
     if (checkValidateAll()) {
       addDateToStorage();
+      displayAcceptModal();
     }
   });
-})();
- // Скрипт проверки валидности полей формы и отправки данных в localstorage;
+})(); // Скрипт проверки валидности полей формы и отправки данных в localstorage;
