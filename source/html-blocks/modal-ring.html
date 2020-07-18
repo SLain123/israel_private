@@ -6,31 +6,37 @@
   </p>
   <form action="#" method="POST" class="modal-ring__form">
     <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
-    <input
-      class="modal-ring__name modal-ring__form_right"
-      type="text"
-      placeholder="Имя"
-      name="Имя клиента"
-    />
-    <input
-      class="modal-ring__phone modal-ring__form_right"
-      type="text"
-      placeholder="Телефон"
-      name="Телефон клиента"
-    />
+    <label>
+      <span class="visually-hidden">Имя клиента</span>
+      <input
+        class="modal-ring__name modal-ring__form_right"
+        type="text"
+        placeholder="Имя"
+        name="Имя клиента"
+      />
+    </label>
+    <label>
+      <span class="visually-hidden">Имя клиента</span>
+        <input
+        class="modal-ring__phone modal-ring__form_right"
+        type="text"
+        placeholder="Телефон"
+        name="Телефон клиента"
+      />
+    </label>
     <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
     <button type="button" aria-label="Перезвоните мне">
       перезвоните мне
     </button>
     <div class="modal-ring__check">
       <input type="checkbox" id="accept" class="modal-ring__checkbox" />
-      <label class="modal-ring__form_right-box" for="accept"
+      <label class="modal-ring__form_right-box modal-ring__lable" for="accept"
         >Нажимая на кнопку, вы даёте согласие на обработку персональных
         данных</label
       >
     </div>
   </form>
-  <a class="modal-ring__cls-btn-link" aria-label="Закрыть">
+  <button type="button" class="modal-ring__cls-btn-link" aria-label="Закрыть">
     <svg
       width="17"
       viewBox="0 0 18 17"
@@ -39,5 +45,5 @@
     >
       <use xlink:href="#form-close" />
     </svg>
-  </a>
+  </button>
 </div>

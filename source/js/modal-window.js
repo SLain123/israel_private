@@ -10,7 +10,7 @@
   const inputName = document.querySelector(".modal-ring__name");
   const inputPhone = document.querySelector(".modal-ring__phone");
   const checkbox = document.querySelector(".modal-ring__checkbox");
-  const label = document.querySelector(".modal-ring__form label");
+  const label = document.querySelector(".modal-ring__lable");
   const modalAccept = document.querySelector(".modal-accept");
   const okBtn = document.querySelector(".modal-accept__btn-ok");
 

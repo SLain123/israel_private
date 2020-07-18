@@ -10,7 +10,7 @@
   var inputName = document.querySelector(".modal-ring__name");
   var inputPhone = document.querySelector(".modal-ring__phone");
   var checkbox = document.querySelector(".modal-ring__checkbox");
-  var label = document.querySelector(".modal-ring__form label");
+  var label = document.querySelector(".modal-ring__lable");
   var modalAccept = document.querySelector(".modal-accept");
   var okBtn = document.querySelector(".modal-accept__btn-ok"); // Функции отвечающие за отображение и скрытие модального окна
 
@@ -130,7 +130,7 @@
   var inputName = document.querySelector('.modal-ring__name');
   var inputPhone = document.querySelector('.modal-ring__phone');
   var checkbox = document.querySelector('.modal-ring__checkbox');
-  var lable = document.querySelector(".modal-ring__form label");
+  var lable = document.querySelector(".modal-ring__lable");
   var errorMessages = document.querySelectorAll(".modal-ring__error-text");
   var modalRing = document.querySelector(".modal-ring");
   var modalAccept = document.querySelector(".modal-accept"); // localStorage.clear() // раскоментировать чтобы почистить localStorage в случае ошибок связанных с храналищем
