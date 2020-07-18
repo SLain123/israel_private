@@ -13,9 +13,12 @@
     <div class="container">
       <include src="source/html-blocks/first.html"></include>
     </div>
-    <div class="overlay overlay-hide">
-      <include src="source/html-blocks/modal-ring.html"></include>
-      <include src="source/html-blocks/modal-accept.html"></include>
+    <div class="modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay"></div>
+        <include src="source/html-blocks/modal-ring.html"></include>
+        <include src="source/html-blocks/modal-accept.html"></include>
+      </div>
     </div>
     <script src="./js/script.js"></script>
   </body>

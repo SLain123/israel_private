@@ -29,4 +29,9 @@ $retina-dppx: 1.5dppx;
 
 // timers
 
-$t-anim: 0.4s;
+
+// Animation
+$t-anim: 0.3s;
+
+$default-transition-settings:       0.3s ease;
+$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);

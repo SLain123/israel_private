@@ -1,41 +1,36 @@
 // main ../style.scss
 
 .modal-ring {
+  position: relative;
   width: 480px;
   height: 523px;
-  display: block;
-  max-width: 100%;
   border-radius: 8px;
   background-color: $white;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  animation: modal linear $t-anim;
-  max-height: 100%;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  padding: 60px 72px 40px 48px;
+  text-align: center;
+  transition: opacity $modal-transition-settings,
+    transform $modal-transition-settings,
+    visibility $modal-transition-settings;
 
   @include w-768 {
     width: 320px;
     border-radius: 0;
     height: 768px;
+    padding: 170px 16px;
   }
 
-  // .modal-ring__container
+  // .modal-ring_hide
 
-  &__container {
+  &_hide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 56px 72px 40px 48px;
-
-    @include w-768 {
-      padding: 170px 16px;
-    }
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
   }
 
   // .modal-ring__title
@@ -268,15 +263,5 @@
 
   &_error-box {
     color: $red;
-  }
-}
-
-@keyframes modal {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }

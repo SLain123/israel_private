@@ -1,15 +1,18 @@
 (function modalWindow() {
-  const overlay = document.querySelector(".overlay");
+  const modalMain = document.querySelector(".modal");
+  const modalRing = document.querySelector(".modal-ring");
+  const overlay = document.querySelector(".modal__overlay");
   const callMeBtn = document.querySelector(".menu__ring-me");
   const closeBtnModalRing = document.querySelector(".modal-ring__cls-btn-link");
-  const closeBtnModalAccept = document.querySelector(".modal-accept__cls-btn-link");
+  const closeBtnModalAccept = document.querySelector(
+    ".modal-accept__cls-btn-link"
+  );
   const inputName = document.querySelector(".modal-ring__name");
   const inputPhone = document.querySelector(".modal-ring__phone");
   const checkbox = document.querySelector(".modal-ring__checkbox");
   const label = document.querySelector(".modal-ring__form label");
-  const errorMessages = document.querySelectorAll(".modal-ring__error-text");
   const modalAccept = document.querySelector(".modal-accept");
-  const okBtn = document.querySelector('.modal-accept__btn-ok');
+  const okBtn = document.querySelector(".modal-accept__btn-ok");
 
   // Функции отвечающие за отображение и скрытие модального окна
 
@@ -17,8 +20,7 @@
     let body = document.querySelector("body");
     let padding = findPadding();
 
-    overlay.classList.remove("overlay-hide");
-    overlay.classList.add("overlay-visible");
+    modalMain.classList.add("modal_visible");
 
     body.style.paddingRight = `${padding}px`;
     body.classList.add("no-scroll");
@@ -29,13 +31,15 @@
   const hideModal = function () {
     let body = document.querySelector("body");
 
-    overlay.classList.add("overlay-hide");
-    overlay.classList.remove("overlay-visible");
+    modalMain.classList.remove("modal_visible");
 
-    body.style.paddingRight = `0`;
+    setTimeout(function() {
+      body.style.paddingRight = `0`;
     body.classList.remove("no-scroll");
 
-    cleanForm();
+    }, 400);
+
+    // заменить на автозаполнение
   };
 
   const checkClickOutOfBorder = function (evt) {
@@ -44,28 +48,13 @@
     }
   };
 
-  // Функция высчитывает отступ равный скроллу браузера;
+  // Функция высчитывает отступ равный скроллу браузера
 
   const findPadding = function () {
     return window.innerWidth - document.documentElement.clientWidth;
   };
 
-  // Функция чистить форму после закрытия или отправки;
-
-  const cleanForm = function () {
-    inputName.value = "";
-    inputName.classList.remove("modal-ring__form_error");
-    inputName.classList.add("modal-ring__form_right");
-    inputPhone.value = "";
-    inputPhone.classList.remove("modal-ring__form_error");
-    inputPhone.classList.add("modal-ring__form_right");
-    checkbox.checked = false;
-    label.classList.remove("modal-ring__form_error-box");
-
-    for (let mess of errorMessages) {
-      mess.classList.remove("modal-ring__error-text_visible");
-    }
-  };
+  // Функция заполнит форму из localStorage
 
   // Функция активации чекбокса
 
@@ -77,15 +66,32 @@
 
   // Функции скрытия модального окна "Заявка принята"
 
-  const hideAccept = function() {
-    modalAccept.classList.remove("modal-accept_visible");
+  const hideAccept = function () {
     modalAccept.classList.add("modal-accept_hide");
+    setTimeout(function() {
+      modalRing.classList.remove("modal-ring_hide");
+    },400);
     hideModal();
+  };
+
+  // Функция добавляет данные из localStorage в форму
+
+  const fillForm = function() {
+    let dataMain = JSON.parse(localStorage.getItem('data'));
+    if(dataMain !== null) {
+      let {name, phone} = dataMain;
+
+      inputName.value = name;
+      inputPhone.value = phone;
+    }
   }
 
   // События отвечающие за вызов функций отображения и скрытия модального окна
 
-  callMeBtn.addEventListener("click", displayModal);
+  callMeBtn.addEventListener("click", function() {
+    fillForm();
+    displayModal();
+  });
   window.addEventListener("keydown", function (evt) {
     if (evt.key === "Escape") {
       hideModal();
@@ -95,5 +101,5 @@
   closeBtnModalAccept.addEventListener("click", hideAccept);
   overlay.addEventListener("mousedown", checkClickOutOfBorder);
   label.addEventListener("click", activateCheckBox);
-  okBtn.addEventListener('click', hideAccept);
+  okBtn.addEventListener("click", hideAccept);
 })();

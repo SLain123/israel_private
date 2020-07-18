@@ -5,16 +5,17 @@
   const checkbox = document.querySelector('.modal-ring__checkbox')
   const lable = document.querySelector(".modal-ring__form label");
   const errorMessages = document.querySelectorAll(".modal-ring__error-text");
+  const modalRing = document.querySelector(".modal-ring");
   const modalAccept = document.querySelector(".modal-accept");
 
-  // localStorage.clear() // раскоментировать чтобы почистить localStorage в случае ошибок связанных с храналищем;
+  // localStorage.clear() // раскоментировать чтобы почистить localStorage в случае ошибок связанных с храналищем
 
-  // Проверяет инпут имя на валидность и меняет классы в случае ошибки;
+  // Проверяет инпут имя на валидность и меняет классы в случае ошибки
 
   const checkName = function () {
     let errorText = errorMessages[0];
 
-    if (inputName.value !== "") {
+    if (inputName.value) {
       inputName.classList.add("modal-ring__form_right");
       inputName.classList.remove("modal-ring__form_error");
       errorText.classList.remove("modal-ring__error-text_visible");
@@ -27,7 +28,7 @@
     }
   };
 
-  // Проверяет инпут телефон на валидность и меняет классы в случае ошибки;
+  // Проверяет инпут телефон на валидность и меняет классы в случае ошибки
 
   const checkPhone = function () {
     let errorText = errorMessages[1];
@@ -45,7 +46,7 @@
     }
   };
 
-  // Проверяет чекбокс на установленную галочку и меняет классы в случае ошибки;
+  // Проверяет чекбокс на установленную галочку и меняет классы в случае ошибки
 
   const checkRuleBox = function () {
     if (checkbox.checked) {
@@ -64,15 +65,15 @@
   const checkValidateAll = function () {
     let result = true;
 
-    if (checkName() === false) {
+    if (!checkName()) {
       result = false;
     }
 
-    if (checkPhone() === false) {
+    if (!checkPhone()) {
       result = false;
     }
 
-    if (checkRuleBox() === false) {
+    if (!checkRuleBox()) {
       result = false;
     }
     return result;
@@ -86,33 +87,15 @@
       phone: inputPhone.value,
     };
     let rightFormat = JSON.stringify(infoObj);
-    let freeStore = checkFreeKey(0);
 
-    localStorage.setItem(freeStore, rightFormat);
-  };
-
-  // Подфункция вычисляет свободную ячейку для записи в localStorage;
-
-  const checkFreeKey = function (num) {
-    let result = 0;
-
-    function findNumber(num) {
-      if (localStorage.getItem(num) === null) {
-        result = num;
-      } else {
-        findNumber(num + 1);
-      }
-    }
-    findNumber(num);
-
-    return result;
+    localStorage.setItem('data', rightFormat);
   };
 
   // Функция отображения модального окна "Заявка принята"
 
   const displayAcceptModal = function() {
-    modalAccept.classList.add("modal-accept_visible");
     modalAccept.classList.remove("modal-accept_hide");
+    modalRing.classList.add("modal-ring_hide");
   }
 
   // Событие на кнопку отправки

@@ -67,56 +67,55 @@
 </div>
 
     </div>
-    <div class="overlay overlay-hide">
-      <div class="modal-ring">
-  <div class="modal-ring__container">
-    <p class="modal-ring__title">Заказать звонок</p>
-    <p class="modal-ring__sub-title">
-      Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня
-      и обязательно поможем найти ответ на ваш вопрос!
-    </p>
-    <form action="#" method="POST" class="modal-ring__form">
-      <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
-      <input class="modal-ring__name modal-ring__form_right" type="text" placeholder="Имя" name="Имя клиента">
-      <input class="modal-ring__phone modal-ring__form_right" type="text" placeholder="Телефон" name="Телефон клиента">
-      <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
-      <button type="button" aria-label="Перезвоните мне">
-        перезвоните мне
-      </button>
-      <div class="modal-ring__check">
-        <input type="checkbox" id="accept" class="modal-ring__checkbox">
-        <label class="modal-ring__form_right-box" for="accept">Нажимая на кнопку, вы даёте согласие на обработку персональных
-          данных</label>
-      </div>
-    </form>
-    <a class="modal-ring__cls-btn-link" aria-label="Закрыть">
-      <svg width="17" viewBox="0 0 18 17" fill="none" class="modal-ring__cls-btn-img">
-        <use xlink:href="#form-close"></use>
-      </svg>
-    </a>
-  </div>
-</div>
-
-      <div class="modal-accept modal-accept_hide">
-  <div class="modal-accept__container">
-    <svg width="71" height="64" viewBox="0 0 18 17" fill="none" class="modal-accept__twit">
-      <use xlink:href="#accept"></use>
-    </svg>
-    <p class="modal-accept__title">Заявка принята</p>
-    <p class="modal-accept__sub-title">
-      Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!
-    </p>
-    <button class="modal-accept__btn-ok" type="button" aria-label="Понятно">
-      понятно
+    <div class="modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay"></div>
+        <div class="modal-ring">
+  <p class="modal-ring__title">Заказать звонок</p>
+  <p class="modal-ring__sub-title">
+    Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня
+    и обязательно поможем найти ответ на ваш вопрос!
+  </p>
+  <form action="#" method="POST" class="modal-ring__form">
+    <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
+    <input class="modal-ring__name modal-ring__form_right" type="text" placeholder="Имя" name="Имя клиента">
+    <input class="modal-ring__phone modal-ring__form_right" type="text" placeholder="Телефон" name="Телефон клиента">
+    <p class="modal-ring__error-text">Ошибка: Не верный формат.</p>
+    <button type="button" aria-label="Перезвоните мне">
+      перезвоните мне
     </button>
-    <a class="modal-accept__cls-btn-link" aria-label="Закрыть">
-      <svg width="17" viewBox="0 0 18 17" fill="red" class="modal-accept__cls-btn-img">
-        <use xlink:href="#form-close"></use>
-      </svg>
-    </a>
-  </div>
+    <div class="modal-ring__check">
+      <input type="checkbox" id="accept" class="modal-ring__checkbox">
+      <label class="modal-ring__form_right-box" for="accept">Нажимая на кнопку, вы даёте согласие на обработку персональных
+        данных</label>
+    </div>
+  </form>
+  <a class="modal-ring__cls-btn-link" aria-label="Закрыть">
+    <svg width="17" viewBox="0 0 18 17" fill="none" class="modal-ring__cls-btn-img">
+      <use xlink:href="#form-close"></use>
+    </svg>
+  </a>
 </div>
 
+        <div class="modal-accept modal-accept_hide">
+  <svg width="71" height="64" viewBox="0 0 18 17" fill="none" class="modal-accept__twit">
+    <use xlink:href="#accept"></use>
+  </svg>
+  <p class="modal-accept__title">Заявка принята</p>
+  <p class="modal-accept__sub-title">
+    Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!
+  </p>
+  <button class="modal-accept__btn-ok" type="button" aria-label="Понятно">
+    понятно
+  </button>
+  <a class="modal-accept__cls-btn-link" aria-label="Закрыть">
+    <svg width="17" viewBox="0 0 18 17" fill="red" class="modal-accept__cls-btn-img">
+      <use xlink:href="#form-close"></use>
+    </svg>
+  </a>
+</div>
+
+      </div>
     </div>
     <script src="./js/script.js"></script>
   </body>
