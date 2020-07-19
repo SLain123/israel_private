@@ -43,4 +43,4 @@ function scroll() {
   );
 }
 
-export { scroll };
+export default scroll;

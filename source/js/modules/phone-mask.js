@@ -36,4 +36,4 @@ function phoneMask() {
   });
 }
 
-export { phoneMask };
+export default phoneMask;

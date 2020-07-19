@@ -108,4 +108,4 @@ function validateAndSendForm() {
   });
 }
 
-export { validateAndSendForm };
+export default validateAndSendForm;

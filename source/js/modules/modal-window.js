@@ -103,4 +103,4 @@ function modalWindow() {
   okBtn.addEventListener("click", hideAccept);
 }
 
-export { modalWindow };
+export default modalWindow;
