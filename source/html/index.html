@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <title>Israel</title>
+  </head>
+  <body>
+    <div style="display: none;">
+      @@include("build/img/sprite_auto.svg")
+    </div>
+    <div class="main-container">
+      @@include("source/html/html-blocks/first.html")
+      @@include("source/html/html-blocks/about.html")
+      @@include("source/html/html-blocks/programs.html")
+    </div>
+    <div class="modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay"></div>
+        @@include("source/html/html-blocks/modal-ring.html")
+        @@include("source/html/html-blocks/modal-accept.html")
+      </div>
+    </div>
+    <script src="./js/main.min.js"></script>
+  </body>
+</html>

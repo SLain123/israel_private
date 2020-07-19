@@ -1,14 +1,14 @@
 // main ../style.scss
 
 .about {
-  background: url("../img/programs_bg_1.jpg");
+  background: url("../img/bg/programs_bg_1.jpg");
   background-position-y: 150px;
   background-repeat: no-repeat;
   max-width: 1366px;
   margin: 0 auto;
 
   @include retina {
-    background-image: url("../img/programs_bg_1@2x.jpg");
+    background-image: url("../img/bg/programs_bg_1@2x.jpg");
     background-size: 1366px;
   }
 

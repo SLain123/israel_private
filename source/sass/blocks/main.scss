@@ -16,7 +16,7 @@
 
   &__bg {
     position: relative;
-    background-image: url("../img/bg.jpg");
+    background-image: url("../img/bg/bg.jpg");
     background-repeat: no-repeat;
     background-position-y: -30px;
     background-position-x: center;
@@ -24,7 +24,7 @@
     display: block;
 
     @include retina {
-      background-image: url("../img/bg@2x.jpg");
+      background-image: url("../img/bg/bg@2x.jpg");
     }
 
     @include w-1024 {
@@ -33,12 +33,12 @@
     }
 
     @include w-768 {
-      background-image: url("../img/bg_mobile.jpg");
+      background-image: url("../img/bg/bg_mobile.jpg");
       background-size: 880px;
       background-position-y: 20px;
 
       @include retina {
-        background-image: url("../img/bg_mobile@2x.jpg");
+        background-image: url("../img/bg/bg_mobile@2x.jpg");
       }
     }
   }
@@ -97,14 +97,14 @@
   // .main__scroll-img
 
   &__scroll-img {
-    background-image: url("../img/mouse.png");
+    background-image: url("../img/content/mouse.png");
     background-repeat: no-repeat;
     background-position-x: 29px;
     background-position-y: 25px;
     background-size: 19px;
 
     @include retina {
-      background-image: url("../img/mouse@2x.png");
+      background-image: url("../img/content/mouse@2x.png");
     }
   }
 }
