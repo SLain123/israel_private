@@ -2,6 +2,14 @@
 
 .main {
   min-height: 906px;
+
+  @include w-1024 {
+    min-height: 687px;
+  }
+
+  @include w-768 {
+    min-height: 617px;
+  }
   // .main__bg
 
   &__bg {
@@ -68,10 +76,12 @@
     font-weight: 700;
     display: inline-block;
     margin-bottom: 35px;
+    width: 343px;
 
     @include w-768 {
       margin-bottom: 20px;
       font-size: 20px;
+      width: 297px;
     }
   }
 

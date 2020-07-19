@@ -1,0 +1,148 @@
+// main ../style.scss
+
+.about {
+  background: url("../img/programs_bg_1.jpg");
+  background-position-y: 150px;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/programs_bg_1@2x.jpg");
+    background-size: 1366px;
+  }
+
+  @include w-768 {
+    background-size: contain;
+    background-position-y: 230px;
+    background-position-x: 30px;
+  }
+
+
+  // .about__title
+
+  &__title {
+    text-align: center;
+    margin-bottom: 24px;
+
+    @include w-768 {
+      margin-bottom: 34px;
+    }
+  }
+
+  // .about__subtitle
+
+  &__subtitle {
+    max-width: 720px;
+    margin: 0 auto;
+
+    @include w-768 {
+      margin: 0 5px;
+    }
+
+  }
+
+  // .about__video-container
+
+  &__video-container {
+    position: relative;
+    width: 100%;
+    min-height: 604px;
+    margin: 0 auto 96px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include w-768 {
+      min-height: 224px;
+      margin-top: 58px;
+    }
+
+  }
+
+  // .about__video-img
+
+  &__video-img {
+    width: 100%;
+
+    & img {
+      margin: 0 auto;
+    }
+  }
+
+  // .about__video-play-btn
+
+  &__video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: none;
+
+    &:hover {
+      width: 66px;
+      height: 66px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      opacity: 0.97;
+    }
+
+    &:focus {
+      opacity: 0.87;
+      background-color: #f4f4f4;
+      border-radius: 100%;
+      border: 2px $blue solid;
+      outline: none;
+    }
+
+    @include w-768 {
+      width: 50px;
+      height: 50px;
+
+      &:hover {
+        width: 52px;
+        height: 52px;
+      }
+
+      &:focus {
+        border: 1px $blue solid;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 96px;
+      height: 96px;
+      background-color: #ffffff;
+      opacity: 0.32;
+      border-radius: 100%;
+      cursor: pointer;
+
+      @include w-768 {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  // .about__video-play-img
+
+  &__video-play-img {
+    margin-left: 5px;
+    z-index: 5;
+    cursor: pointer;
+
+    @include w-768 {
+      width: 14px;
+      height: 17px;
+    }
+  }
+}
