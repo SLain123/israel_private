@@ -1,6 +1,8 @@
 "use strict";
 
-import { polyfills } from "./utils/polyfills";
+import {
+  polyfills
+} from "./utils/polyfills";
 
 // Modules
 //----------------------------------
@@ -10,13 +12,14 @@ import phoneMask from "./modules/phone-mask"; // Скрипт для маски 
 import validateAndSendForm from "./modules/validate&send-form"; // Скрипт проверки валидности полей формы и отправки данных в localstorage;
 import scroll from "./modules/scroll"; // Скрипт нижнего скролла для кнопки на главной странице;
 import swiper from "./vendor/swiper"; // Подключение свайпера;
-import { mySwaper, mySwiper } from "./modules/tabs";
+import {
+  mySwiper
+} from "./modules/tabs";
 
 modalWindow();
 phoneMask();
 validateAndSendForm();
 scroll();
-mySwiper();
 
 // Utils
 // ---------------------------------
