@@ -9,8 +9,7 @@
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
   padding: 60px 72px 40px 48px;
   text-align: center;
-  transition: opacity $modal-transition-settings,
-    transform $modal-transition-settings, visibility $modal-transition-settings;
+  transition: opacity $modal-transition-settings, transform $modal-transition-settings, visibility $modal-transition-settings;
 
   @include w-768 {
     width: 320px;

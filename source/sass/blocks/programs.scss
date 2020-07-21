@@ -1,10 +1,38 @@
 // main: ../style.scss
 
 .programs {
+  background-image: url("../img/bg/programs_bg.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  background-position-y: 80px;
+  padding: 104px 0 31px 0;
+
+  @include retina {
+    background-image: url("../img/bg/programs_bg@2x.jpg");
+  }
+
+  @include w-768 {
+    background-size: contain;
+    background-position-y: 250px;
+  }
+
+  // .programs_position
+
+  &_position {
+    max-width: 1140px;
+    padding-left: 40px;
+    margin: auto;
+
+    @include w-768 {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
 
   // .programs__title
 
   &__title {
+    margin-bottom: 91px;
 
     @include w-768 {
       width: 100%;
@@ -16,60 +44,190 @@
   // .programs__main-block
 
   &__main-block {
-    overflow-x: hidden;
+    display: flex;
+
+    @include w-768 {
+      flex-flow: column;
+    }
   }
 
   // .programs__swiper-container
 
   &__swiper-container {
-    max-width: 690px;
-    width: 100%;
+    width: 315px;
+    margin: 0;
+
+    @include w-768 {
+      max-width: 690px;
+      width: 100%;
+    }
   }
 
   // .programs__swiper-wrapper
 
   &__swiper-wrapper {
-    color: black;
+    display: flex;
+    flex-flow: column;
+
+    @include w-768 {
+      flex-flow: row;
+    }
   }
 
   // .programs__swiper-slide
 
   &__swiper-slide {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 48px;
     font-weight: 500;
-    font-size: 16.1788px;
+    font-size: 16px;
     line-height: 19px;
     font-variant: small-caps;
-    text-shadow: 0px 1.01117px 4.04469px rgba(0, 0, 0, 0.12);
-    border-radius: 60.6704px;
+    text-shadow: 0 1.01117px 4.04469px rgba(0, 0, 0, 0.12);
     opacity: 0.87;
+    height: 68px;
+    padding: 16px 20px;
     cursor: pointer;
+    width: 99%;
 
-    :hover {
-      color: $yellow;
+    @include w-768 {
+      justify-content: center;
+      height: 48px;
+      border-radius: 60.6704px;
+      width: 100%;
+      padding: 0;
     }
 
     // .programs__swiper-slide_active
 
     &_active {
-      background: $grad;
+      background-image: url("../img/bg/arrow-bg.png");
       color: white;
       opacity: 1;
+      width: 228px;
+
+      @include w-768 {
+        background: $grad;
+      }
     }
   }
 
   // .programs__swiper-icon
 
   &__swiper-icon {
-    margin-right: 7px;
+    margin-right: 8px;
+    background-image: url("../img/content/icons.png");
+    background-position-y: 77px;
+    display: block;
+
+    // .programs__swiper-icon_hover-style
+
+    &_hover-style {
+      background-position-y: 34px;
+    }
+
+    // .programs__swiper-icon_active-style
+
+    &_active-style {
+      background-position-y: 0;
+    }
+  }
+
+  // .programs__swiper-star
+
+  &__swiper-star {
+    width: 28px;
+    height: 33px;
+    background-position-x: 0;
+  }
+
+  // .programs__swiper-hat
+
+  &__swiper-hat {
+    width: 36px;
+    height: 34px;
+    background-position-x: -45px;
+    margin-right: 2px;
+  }
+
+  // .programs__swiper-case
+
+  &__swiper-case {
+    width: 32px;
+    height: 45px;
+    background-position-x: -96px;
+  }
+
+  // .programs__swiper-hand
+
+  &__swiper-hand {
+    width: 32px;
+    height: 45px;
+    background-position-x: -143px;
+  }
+
+  // .programs__swiper-glass
+
+  &__swiper-glass {
+    width: 25px;
+    height: 45px;
+    background-position-x: -190px;
+  }
+
+  // .programs__swiper-text_hover-style
+
+  &__swiper-text_hover-style {
+    color: $yellow;
   }
 
   // .programs__info
 
   &__info {
-    color: black;
+    position: relative;
+    width: 560px;
+    min-height: 288px;
+    height: auto;
+
+    @include w-768 {
+      width: 95%;
+      margin: 32px 16px 0 16px;
+    }
+  }
+
+  // .programs__info-container
+
+  &__info-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: $default-transition-settings;
+
+    // .programs__info-container_hide
+
+    &_hide {
+      opacity: 0;
+    }
+  }
+
+  // .programs__info-title
+
+  &__info-title {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+    margin-top: 20px;
+    text-transform: none;
+
+    @include w-768 {
+      font-size: 24px;
+      letter-spacing: -0.48px;
+    }
+  }
+
+  // .programs__info-text
+
+  &__info-text {
+    opacity: 0.87;
+    line-height: 25.5px;
   }
 }

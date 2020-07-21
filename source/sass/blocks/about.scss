@@ -39,7 +39,6 @@
     @include w-768 {
       margin: 0 5px;
     }
-
   }
 
   // .about__video-container
@@ -48,7 +47,7 @@
     position: relative;
     width: 100%;
     min-height: 604px;
-    margin: 0 auto 96px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +56,6 @@
       min-height: 224px;
       margin-top: 58px;
     }
-
   }
 
   // .about__video-img
@@ -120,7 +118,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      content: '';
+      content: "";
       width: 96px;
       height: 96px;
       background-color: #ffffff;
