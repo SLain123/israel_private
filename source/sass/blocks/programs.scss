@@ -90,6 +90,20 @@
     padding: 16px 20px;
     cursor: pointer;
     width: 99%;
+    border: none;
+    background-color: $transparent;
+
+    &:active {
+      outline: none;
+    }
+
+    &:hover span {
+      color: $yellow;
+    }
+
+    &:hover .programs__swiper-icon {
+      background-position-y: 34px;
+    }
 
     @include w-768 {
       justify-content: center;
@@ -107,6 +121,18 @@
       opacity: 1;
       width: 228px;
 
+      &:focus {
+        outline: none;
+      }
+
+      &:hover span {
+        color: white;
+      }
+
+      &:hover .programs__swiper-icon {
+        background-position-y: 0;
+      }
+
       @include w-768 {
         background: $grad;
       }
@@ -120,12 +146,6 @@
     background-image: url("../img/content/icons.png");
     background-position-y: 77px;
     display: block;
-
-    // .programs__swiper-icon_hover-style
-
-    &_hover-style {
-      background-position-y: 34px;
-    }
 
     // .programs__swiper-icon_active-style
 
@@ -173,12 +193,6 @@
     width: 25px;
     height: 45px;
     background-position-x: -190px;
-  }
-
-  // .programs__swiper-text_hover-style
-
-  &__swiper-text_hover-style {
-    color: $yellow;
   }
 
   // .programs__info

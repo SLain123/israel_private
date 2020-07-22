@@ -10,8 +10,13 @@
     <div style="display: none;">
       @@include("build/img/sprite_auto.svg")
     </div>
+    <div class="main main__bg">
+      <div class="container">
+      @@include("source/html/html-blocks/header.html")
     <main class="main-container">
       @@include("source/html/html-blocks/first.html")
+      </div>
+    </div>
       @@include("source/html/html-blocks/about.html")
       @@include("source/html/html-blocks/programs.html")
     </main>
@@ -22,6 +27,7 @@
         @@include("source/html/html-blocks/modal-accept.html")
       </div>
     </div>
+    <script src="./js/vendor.min.js"></script>
     <script src="./js/main.min.js"></script>
   </body>
 </html>
