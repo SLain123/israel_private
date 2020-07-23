@@ -13,6 +13,8 @@ function modalWindow() {
   const label = document.querySelector(`.modal-ring__lable`);
   const modalAccept = document.querySelector(`.modal-accept`);
   const okBtn = document.querySelector(`.modal-accept__btn-ok`);
+  const secondSendBtn = document.querySelector(`.want-way__phone-btn`);
+  const secondPhoneInput = document.querySelector(`.want-way__phone-input`);
 
   // Функции отвечающие за отображение и скрытие модального окна
 
@@ -87,6 +89,16 @@ function modalWindow() {
     }
   };
 
+  const checkValidateExstraPhone = function () {
+    if (secondPhoneInput.value.length === 18) {
+      secondPhoneInput.classList.remove(`want-way__phone-input_error`);
+      return true;
+    } else {
+      secondPhoneInput.classList.add(`want-way__phone-input_error`);
+      return false;
+    }
+  };
+
   // События отвечающие за вызов функций отображения и скрытия модального окна
 
   callMeBtn.addEventListener(`click`, function () {
@@ -103,6 +115,14 @@ function modalWindow() {
   overlay.addEventListener(`mousedown`, checkClickOutOfBorder);
   label.addEventListener(`click`, activateCheckBox);
   okBtn.addEventListener(`click`, hideAccept);
+
+  secondSendBtn.addEventListener(`click`, function () {
+    if (checkValidateExstraPhone()) {
+      displayModal();
+      modalAccept.classList.remove(`modal-accept_hide`);
+      modalRing.classList.add(`modal-ring_hide`);
+    }
+  });
 }
 
 export default modalWindow;

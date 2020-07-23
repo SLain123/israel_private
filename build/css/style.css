@@ -1735,11 +1735,12 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
   .programs_position {
     max-width: 1140px;
     padding-left: 40px;
-    margin: auto; }
+    margin: 0 auto 50px auto; }
     @media (max-width: 768px) {
       .programs_position {
         margin-left: 0;
-        padding-left: 0; } }
+        padding-left: 0;
+        margin-bottom: 100px; } }
   .programs__title {
     margin-bottom: 91px; }
     @media (max-width: 768px) {
@@ -1884,6 +1885,135 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
   .programs__info-text {
     opacity: 0.87;
     line-height: 25.5px; }
+
+.want-way {
+  background-image: url("../img/bg/girl-flag-bg.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 830px; }
+  @media (max-width: 1024px) {
+    .want-way {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column;
+              flex-flow: column;
+      background-position-x: 50%;
+      background-position-y: 100%;
+      background-size: 100%; } }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .want-way {
+      background-image: url("../img/bg/girl-flag-bg@2x.jpg"); } }
+  .want-way_position {
+    min-height: 594px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 175px; }
+    @media (max-width: 1024px) {
+      .want-way_position {
+        min-height: 900px;
+        padding-top: 0; } }
+    @media (max-width: 768px) {
+      .want-way_position {
+        min-height: 620px;
+        padding-top: 0;
+        margin-top: 120px; } }
+  .want-way__form {
+    max-width: 1366px;
+    min-height: 328px;
+    margin: 0 auto;
+    width: 100%; }
+    @media (max-width: 1024px) {
+      .want-way__form {
+        max-width: 100%; } }
+  .want-way__form-bg {
+    background-image: url("../img/bg/backpack.jpg");
+    background-repeat: no-repeat;
+    background-position-x: -60px;
+    padding-top: 40px; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      .want-way__form-bg {
+        background-image: url("../img/bg/backpack@2x.jpg"); } }
+  .want-way__form-content {
+    width: 477px;
+    margin-left: 170px; }
+    @media (max-width: 1024px) {
+      .want-way__form-content {
+        margin-top: 40px; } }
+    @media (max-width: 768px) {
+      .want-way__form-content {
+        width: 286px;
+        margin: 40px 12px; } }
+  .want-way__sub-title {
+    max-width: 400px;
+    line-height: 28.9px; }
+    @media (max-width: 768px) {
+      .want-way__sub-title {
+        width: 286px; } }
+  .want-way__form-container {
+    position: relative;
+    margin-top: 64px; }
+  .want-way__phone-input {
+    border: 2px solid #e3e3e3;
+    border-radius: 150px;
+    padding: 19px 193px 20px 40px; }
+    .want-way__phone-input:focus {
+      border-radius: 150px;
+      border: 2px #ffc341 solid;
+      outline: none; }
+    .want-way__phone-input::-webkit-input-placeholder {
+      color: #484848;
+      text-transform: uppercase;
+      opacity: 0.5; }
+    .want-way__phone-input::-moz-placeholder {
+      color: #484848;
+      text-transform: uppercase;
+      opacity: 0.5; }
+    .want-way__phone-input:-ms-input-placeholder {
+      color: #484848;
+      text-transform: uppercase;
+      opacity: 0.5; }
+    .want-way__phone-input::-ms-input-placeholder {
+      color: #484848;
+      text-transform: uppercase;
+      opacity: 0.5; }
+    .want-way__phone-input::placeholder {
+      color: #484848;
+      text-transform: uppercase;
+      opacity: 0.5; }
+    @media (max-width: 768px) {
+      .want-way__phone-input {
+        width: 287px;
+        padding-right: 40px; } }
+    .want-way__phone-input_error {
+      border: 2px red solid; }
+  .want-way__phone-btn {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    padding: 20px 40px 20px 40px;
+    border-radius: 150px;
+    background: linear-gradient(108.42deg, #ffc341 0%, #ffd701 96%);
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    cursor: pointer;
+    height: 60px;
+    white-space: nowrap; }
+    .want-way__phone-btn:focus {
+      border-radius: 150px;
+      border: 2px #1fc0fc solid;
+      outline: none; }
+    @media (max-width: 768px) {
+      .want-way__phone-btn {
+        width: 264px;
+        position: relative;
+        left: 0;
+        margin: 8px 11px; } }
 
 @font-face {
   font-family: "Raleway";

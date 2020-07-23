@@ -1,5 +1,6 @@
 function phoneMask() {
-  const phoneInput = document.querySelector(`.modal-ring__phone`);
+  const firstPhoneInput = document.querySelector(`.modal-ring__phone`);
+  const secondPhoneInput = document.querySelector(`.want-way__phone-input`);
 
   window.addEventListener(`DOMContentLoaded`, function () {
     function setCursorPosition(pos, elem) {
@@ -36,7 +37,8 @@ function phoneMask() {
       }
     }
 
-    phoneInput.addEventListener(`input`, mask, false);
+    firstPhoneInput.addEventListener(`input`, mask, false);
+    secondPhoneInput.addEventListener(`input`, mask, false);
   });
 }
 

@@ -39,10 +39,10 @@ function tabs() {
   };
 
   const removeActive = function () {
-    for (let btn of allTabBtn) {
-      let icon = btn.querySelector(`.programs__swiper-icon`);
+    for (let i = 0; i < allTabBtn.length; i++) {
+      let icon = allTabBtn[i].querySelector(`.programs__swiper-icon`);
 
-      btn.classList.remove(`programs__swiper-slide_active`);
+      allTabBtn[i].classList.remove(`programs__swiper-slide_active`);
       icon.classList.remove(`programs__swiper-icon_active-style`);
     }
   };
@@ -56,8 +56,8 @@ function tabs() {
   };
 
   const hideAllTabs = function () {
-    for (let tab of allInfoBlocks) {
-      tab.classList.add(`programs__info-container_hide`);
+    for (let i = 0; i < allInfoBlocks.length; i++) {
+      allInfoBlocks[i].classList.add(`programs__info-container_hide`);
     }
   };
 

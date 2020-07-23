@@ -21,11 +21,12 @@
   &_position {
     max-width: 1140px;
     padding-left: 40px;
-    margin: auto;
+    margin: 0 auto 50px auto;
 
     @include w-768 {
       margin-left: 0;
       padding-left: 0;
+      margin-bottom: 100px;
     }
   }
 
