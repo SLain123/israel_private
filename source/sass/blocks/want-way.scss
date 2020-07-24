@@ -1,7 +1,7 @@
 .want-way {
   background-image: url("../img/bg/girl-flag-bg.jpg");
   background-repeat: no-repeat;
-  background-position-x: 830px;
+  background-position-x: 550px;
 
   @include w-1024 {
     display: flex;
@@ -21,6 +21,7 @@
     width: 100%;
     margin: 0 auto;
     padding-top: 175px;
+    max-width: 1366px;
 
     @include w-1024 {
       min-height: 900px;
@@ -159,6 +160,22 @@
       position: relative;
       left: 0;
       margin: 8px 11px;
+    }
+  }
+
+  // .want-way__error
+
+  &__error {
+    color: $red;
+    position: absolute;
+    top: -25px;
+    left: 60px;
+    visibility: hidden;
+
+    // .want-way__error_display
+
+    &_display {
+      visibility: visible
     }
   }
 }

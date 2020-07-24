@@ -5,7 +5,7 @@ function modalWindow() {
   const callMeBtn = document.querySelector(`.menu__ring-me`);
   const closeBtnModalRing = document.querySelector(`.modal-ring__cls-btn-link`);
   const closeBtnModalAccept = document.querySelector(
-      `.modal-accept__cls-btn-link`
+    `.modal-accept__cls-btn-link`
   );
   const inputName = document.querySelector(`.modal-ring__name`);
   const inputPhone = document.querySelector(`.modal-ring__phone`);
@@ -15,6 +15,7 @@ function modalWindow() {
   const okBtn = document.querySelector(`.modal-accept__btn-ok`);
   const secondSendBtn = document.querySelector(`.want-way__phone-btn`);
   const secondPhoneInput = document.querySelector(`.want-way__phone-input`);
+  const errorText = document.querySelector(`.want-way__error`);
 
   // Функции отвечающие за отображение и скрытие модального окна
 
@@ -82,7 +83,7 @@ function modalWindow() {
   const fillForm = function () {
     let dataMain = JSON.parse(localStorage.getItem(`data`));
     if (dataMain !== null) {
-      let {name, phone} = dataMain;
+      let { name, phone } = dataMain;
 
       inputName.value = name;
       inputPhone.value = phone;
@@ -92,9 +93,11 @@ function modalWindow() {
   const checkValidateExstraPhone = function () {
     if (secondPhoneInput.value.length === 18) {
       secondPhoneInput.classList.remove(`want-way__phone-input_error`);
+      errorText.classList.remove(`want-way__error_display`);
       return true;
     } else {
       secondPhoneInput.classList.add(`want-way__phone-input_error`);
+      errorText.classList.add(`want-way__error_display`);
       return false;
     }
   };

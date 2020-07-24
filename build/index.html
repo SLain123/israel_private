@@ -247,13 +247,85 @@
   <div class="want-way__form want-way__form-bg">
     <div class="want-way__form-content">
       <h2 class="title want-way__title">Хочу поехать!</h2>
-      <p class="sub-title want-way__sub-title">Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
+      <p class="sub-title want-way__sub-title">
+        Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим
+        на все вопросы!
+      </p>
       <div class="want-way__form-container">
-        <input type="text" placeholder="Телефон" class="want-way__phone-input">
-        <button type="button" class="want-way__phone-btn">перезвоните мне</button>
+        <div class="want-way__error">Ошибка: неверный формат</div>
+        <input
+          type="text"
+          placeholder="Телефон"
+          class="want-way__phone-input"
+        />
+        <button type="button" class="want-way__phone-btn">
+          перезвоните мне
+        </button>
       </div>
     </div>
   </div>
+</section>
+
+<section class="how-way how-way__position">
+  <picture class="how-way__img">
+    <!-- 1х: 581px; 2x: 1162px -->
+    <source
+      type="image/webp"
+      srcset="img/content/how_way.webp 1x, img/content/how_way@2x.webp 2x"
+    />
+    <img
+      src="img/content/how_way.png"
+      srcset="img/content/how_way@2x.png 2x"
+      alt="Фото участников"
+      class="how-way__img"
+      width="581"
+      height="707"
+    />
+  </picture>
+  <div class="how-way__content">
+    <h2 class="title how-way__title">Как поехать</h2>
+    <div class="sub-title how-way__sub-title">
+      Чтобы узнать подробнее о программе, свяжитесь с координатором в вашем
+      городе. Вы получите актуальные сведения о доступных программах и городах,
+      в которых можете пройти программу.
+    </div>
+    <div class="how-way__header-list">
+      Чтобы иметь возможность получить грант на обучение от 4200 до 8400$, вы
+      должны:
+    </div>
+    <ul class="how-way__list">
+      <li class="how-way__list-item">
+        <div class="how-way__list-number">1</div>
+        <span class="how-way__list-text">Быть в возрасте от 16 до 30 лет</span>
+      </li>
+      <li class="how-way__list-item">
+        <div class="how-way__list-number">2</div>
+        <span class="how-way__list-text"
+          >Иметь оконченное среднее образование</span
+        >
+      </li>
+      <li class="how-way__list-item">
+        <div class="how-way__list-number">3</div>
+        <span class="how-way__list-text"
+          >Иметь документально подтверждённые еврейские корни и пройти
+          консульскую проверку</span
+        >
+      </li>
+      <li class="how-way__list-item">
+        <div class="how-way__list-number">4</div>
+        <span class="how-way__list-text"
+          >За последние 2 года быть не больше 3х месяцев подряд непрерывно в
+          Израиле.</span
+        >
+      </li>
+    </ul>
+
+    <span class="how-way__exstra-text"
+      >Если вы не подходите по этим правилам, вы всё равно можете принять
+      участие в программе «Маса», оплатив её полную стоимость.</span
+    >
+  </div>
+  <div class="how-way__exstra-bg"></div>
 </section>
 
     </main>
