@@ -1,0 +1,278 @@
+// main: ../style.scss
+
+.life {
+  background-image: url("../img/bg/live_bg_1.png");
+  background-repeat: no-repeat;
+  background-position-y: -70px;
+
+  @include retina {
+    background-image: url("../img/bg/live_bg_1@2x.png");
+  }
+
+  @include w-1366 {
+    background-size: 150%;
+  }
+
+  @include w-768 {
+    background-image: none;
+  }
+
+  // .life_position
+
+  &_position {
+    max-width: 1366px;
+    margin: 0 auto;
+    min-height: 950px;
+    position: relative;
+    top: -150px;
+    margin-bottom: -150px;
+
+    @include w-1366 {
+      min-height: 1250px;
+    }
+
+    @include w-768 {
+      min-height: 0;
+    }
+  }
+
+  // .life__exstra-bg
+
+  &__exstra-bg {
+    position: absolute;
+    top: 65%;
+    right: 0;
+    background-image: url("../img/bg/watch.png");
+    background-position-x: 35px;
+    background-repeat: no-repeat;
+    width: 124px;
+    height: 148px;
+
+    @include w-768 {
+      background-image: none;
+    }
+  }
+
+  // .life__content
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  // .life__title
+
+  &__title {
+    width: 415px;
+    margin: auto;
+    padding-top: 2px;
+
+    @include w-768 {
+      width: 208px;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.64px;
+      line-height: 40px;
+      white-space: pre-line;
+      text-align: center;
+    }
+  }
+
+  // .life__sub-title
+
+  &__sub-title {
+    width: 720px;
+    margin: 34px auto 0 auto;
+    text-align: center;
+
+    @include w-768 {
+      width: 280px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+  }
+
+  // .life__slider-container
+
+  &__slider-container {
+    max-width: 1152px;
+    margin-top: -15px;
+
+    @include w-768 {
+      margin: 0 auto;
+      max-width: 300px;
+      padding-left: 5px;
+      height: 430px;
+    }
+  }
+
+  // .life__slider-wrapper
+
+  &__slider-wrapper {
+    display: grid;
+    grid-template-rows: 318px 318px;
+    grid-template-columns: 482px 211px 200px 214px;
+    row-gap: 97px;
+    column-gap: 15px;
+
+    grid-template-areas:
+      "one two three three"
+      "one four four five";
+
+    @include w-1366 {
+      column-gap: 0;
+      grid-template-rows: 318px 318px 318px;
+      grid-template-columns: 350px 122px 211px;
+      row-gap: 37px;
+
+      grid-template-areas:
+        "one one two"
+        "one one five"
+        "four three three";
+    }
+
+    @include w-768 {
+      display: flex;
+      height: 400px;
+    }
+  }
+
+  // .life__slide
+
+  &__slide {
+    width: 100%;
+  }
+
+  // .life__one
+
+  &__one {
+    grid-area: one;
+  }
+
+  // .life__two
+
+  &__two {
+    grid-area: two;
+    margin-top: 67px;
+
+    @include w-768 {
+      margin: 0;
+    }
+  }
+
+  // .life__three
+
+  &__three {
+    grid-area: three;
+    margin-top: 67px;
+
+    @include w-1366 {
+      margin-top: 0;
+    }
+  }
+
+  // .life__four
+
+  &__four {
+    grid-area: four;
+
+    @include w-1366 {
+      padding-right: 15px;
+    }
+  }
+
+  // .life__five
+
+  &__five {
+    grid-area: five;
+
+    @include w-1366 {
+      margin-top: 25px;
+    }
+
+    @include w-768 {
+      margin: 0;
+    }
+  }
+
+  // .life__slide-img
+
+  &__slide-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include w-768 {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  // .life__slide-text
+
+  &__slide-text {
+    width: 78%;
+    position: absolute;
+    bottom: 35px;
+    left: 10%;
+    color: $white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    font-family: $rale;
+    font-size: 21px;
+    font-weight: 800;
+
+    @include w-768 {
+      bottom: 25px;
+      left: 40px;
+      font-size: 18px;
+      max-width: 210px;
+      text-align: center;
+    }
+
+    // .life__slide-text-one
+
+    &-one {
+      width: 60%;
+
+      @include w-768 {
+        width: 280px;
+      }
+    }
+
+    // .life__slide-text-four
+
+    &-four {
+      width: 85%;
+    }
+  }
+
+  // .life__pagination
+
+  &__pagination {
+    display: none;
+
+    @include w-768 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 17px;
+    }
+  }
+}
+
+// .swiper-pagination-bullet
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+
+// swiper-pagination-bullet-active
+
+.swiper-pagination-bullet-active {
+  width: 8px;
+  height: 8px;
+  background: $grad;
+}

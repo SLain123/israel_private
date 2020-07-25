@@ -12,7 +12,7 @@ const setServicesSlider = () => {
     }
   };
   const enableSwiper = function () {
-    servicesSlider = new Swiper(`.swiper-container`, {
+    servicesSlider = new Swiper(`.programs__swiper-container`, {
       spaceBetween: 10,
       slidesPerView: 1.8,
     });

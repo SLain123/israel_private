@@ -1,0 +1,108 @@
+// main: ../style.scss
+
+.masa {
+  background-image: url("../img/bg/meeting.jpg");
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/bg/meeting@2x.jpg");
+  }
+
+  @include w-768 {
+    background-size: 200%;
+    background-position-x: -60px;
+    background-position-y: 30px;
+  }
+
+  // .masa_position
+
+  &_position {
+    max-width: 1366px;
+    margin: 0 auto;
+    min-height: 583px;
+  }
+
+  // .masa__content
+
+  &__content {
+    position: relative;
+    top: 145px;
+    left: 791px;
+    width: 395px;
+    height: 267px;
+
+    @include w-1366 {
+      left: 58.5%;
+    }
+
+    @include w-1024 {
+      left: 45%;
+    }
+
+    @include w-768 {
+      width: 300px;
+      left: 0;
+      top: 0;
+      margin: 81px auto 0 auto;
+    }
+  }
+
+  // .masa__title
+
+  &__title {
+    margin-bottom: 24px;
+
+    @include w-768 {
+      text-align: center;
+      margin-bottom: 101px;
+    }
+  }
+
+  // .masa__sub-title
+
+  &__sub-title {
+    opacity: 0.87;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    color: $white;
+    font-size: 17px;
+    line-height: 28.9px;
+
+    @include w-768 {
+      max-width: 272px;
+      margin: 0 auto;
+    }
+  }
+
+  // .masa__link
+
+  &__link {
+    max-width: 230px;
+    max-height: 59px;
+    display: flex;
+    text-decoration: none;
+    padding: 19px 38px;
+    border-radius: 80px;
+    background: $grad;
+    align-items: center;
+    margin-top: 48px;
+
+    @include w-768 {
+      margin: 48px auto;
+    }
+  }
+
+  // .masa__link-img
+
+  &__link-img {
+    margin-right: 16px;
+  }
+
+  // .masa__link-text
+
+  &__link-text {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    color: $white;
+    font-size: 17px;
+    font-weight: 500;
+  }
+}
