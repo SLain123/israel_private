@@ -81,8 +81,8 @@
   // .masa__link
 
   &__link {
-    max-width: 230px;
-    max-height: 59px;
+    width: 230px;
+    height: 59px;
     display: flex;
     text-decoration: none;
     padding: 19px 38px;
@@ -109,5 +109,6 @@
     color: $white;
     font-size: 17px;
     font-weight: 500;
+    white-space: nowrap;
   }
 }

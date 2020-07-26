@@ -109,14 +109,10 @@
       top: 35px;
       left: 17px;
       content: "";
-      height: 223px;
+      height: calc(100% - 75px);
       width: 2px;
       border-left: 2px dashed $black;
       opacity: 0.2;
-
-      @include w-768 {
-        height: 313px;
-      }
     }
   }
 

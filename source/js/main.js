@@ -5,6 +5,7 @@ import validateAndSendForm from "./modules/validate&send-form"; // Скрипт 
 import scroll from "./modules/scroll"; // Скрипт нижнего скролла для кнопки на главной странице;
 import {setServicesSlider, tabs} from "./modules/tabs"; // Инициализация свайпера и подключение табов;
 import {setServicesSecondSlider} from "./modules/life"; // Инициализация свайпера и подключение слайдера из блока о жизни;
+import accord from "./modules/accord"; // Скрипт для аккорджеона;
 
 // Utils
 // ---------------------------------
@@ -21,3 +22,4 @@ scroll();
 setServicesSlider();
 tabs();
 setServicesSecondSlider();
+accord();

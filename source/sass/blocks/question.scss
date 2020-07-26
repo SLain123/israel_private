@@ -52,6 +52,7 @@
   &__content {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 500px;
 
     @include w-1024 {
       justify-content: center;
@@ -140,11 +141,13 @@
 
   &__btn {
     position: absolute;
-    top: 45px;
+    top: 35px;
     right: 36px;
     background: $transparent;
     border: none;
     cursor: pointer;
+    padding: 5px;
+
 
     @include w-768 {
       right: 0;
@@ -154,7 +157,6 @@
   // .question__btn-img
 
   &__btn-img {
-
   }
 
   // .question__block-img
@@ -176,5 +178,24 @@
 
   & hr {
     opacity: 0.2;
+  }
+
+  // .question__answer
+
+  &__answer {
+    width: 480px;
+    display: block;
+    line-height: 21px;
+    opacity: 0.74;
+    margin-bottom: 32px;
+    transition: $default-transition-settings;
+    max-height: 0;
+    overflow: hidden;
+
+    // .question__answer_active
+
+    &_active {
+      max-height: 300px;
+    }
   }
 }
