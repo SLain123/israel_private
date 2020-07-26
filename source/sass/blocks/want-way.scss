@@ -13,6 +13,11 @@
 
   @include retina {
     background-image: url("../img/bg/girl-flag-bg@2x.jpg");
+    background-size: 820px;
+
+    @include w-1024 {
+      background-size: 100%;
+    }
   }
   // .want-way_position
 
@@ -58,6 +63,7 @@
 
     @include retina {
       background-image: url("../img/bg/backpack@2x.jpg");
+      background-size: 170px;
     }
   }
 
@@ -75,10 +81,6 @@
       width: 286px;
       margin: 40px 12px;
     }
-  }
-  // .want-way__title
-
-  &__title {
   }
 
   // .want-way__sub-title

@@ -6,6 +6,7 @@
 
   @include retina {
     background-image: url("../img/bg/meeting@2x.jpg");
+    background-size: 1360px;
   }
 
   @include w-768 {
@@ -20,6 +21,10 @@
     max-width: 1366px;
     margin: 0 auto;
     min-height: 583px;
+
+    @include w-768 {
+      min-height: 391px;
+    }
   }
 
   // .masa__content

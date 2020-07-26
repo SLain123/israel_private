@@ -2,11 +2,13 @@
 
 .how-way {
   background-image: url("../img/bg/how_way_bg.jpg");
+  background-repeat: no-repeat;
   background-position-y: -50px;
   position: relative;
 
   @include retina {
     background-image: url("../img/bg/how_way_bg@2x.jpg");
+    background-size: 1365px;
   }
 
   @include w-1024 {
@@ -205,8 +207,15 @@
     width: 337px;
     height: 254px;
 
+    @include w-768 {
+      top: 430px;
+      background-position-x: 130px;
+      background-size: 250px;
+    }
+
     @include retina {
       background-image: url("../img/bg/stamp@2x.png");
+      background-size: 260px;
     }
   }
 }

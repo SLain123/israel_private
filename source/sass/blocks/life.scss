@@ -7,6 +7,7 @@
 
   @include retina {
     background-image: url("../img/bg/live_bg_1@2x.png");
+    background-size: 1365px;
   }
 
   @include w-1366 {
@@ -47,6 +48,11 @@
     background-repeat: no-repeat;
     width: 124px;
     height: 148px;
+
+    @include retina {
+      background-image: url("../img/bg/watch@2x.png");
+      background-size: 125px;
+    }
 
     @include w-768 {
       background-image: none;

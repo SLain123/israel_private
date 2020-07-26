@@ -3,12 +3,13 @@
 .programs {
   background-image: url("../img/bg/programs_bg.jpg");
   background-repeat: no-repeat;
-  background-position-x: 80%;
+  background-position-x: 100%;
   background-position-y: 80px;
   padding: 104px 0 31px 0;
 
   @include retina {
     background-image: url("../img/bg/programs_bg@2x.jpg");
+    background-size: 678px;
   }
 
   @include w-768 {
@@ -19,7 +20,7 @@
   // .programs_position
 
   &_position {
-    max-width: 1140px;
+    max-width: 1366px;
     padding-left: 40px;
     margin: 0 auto 50px auto;
 
