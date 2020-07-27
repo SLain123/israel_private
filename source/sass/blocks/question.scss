@@ -107,6 +107,7 @@
     padding-top: 31px;
     padding-bottom: 24px;
     position: relative;
+    cursor: pointer;
   }
 
   // .question__number
@@ -145,18 +146,10 @@
     right: 36px;
     background: $transparent;
     border: none;
-    cursor: pointer;
-    padding: 5px;
-
 
     @include w-768 {
       right: 0;
     }
-  }
-
-  // .question__btn-img
-
-  &__btn-img {
   }
 
   // .question__block-img
@@ -187,15 +180,19 @@
     display: block;
     line-height: 21px;
     opacity: 0.74;
-    margin-bottom: 32px;
     transition: $default-transition-settings;
     max-height: 0;
     overflow: hidden;
+
+    @include w-768 {
+      width: 288px;
+    }
 
     // .question__answer_active
 
     &_active {
       max-height: 300px;
+      margin-bottom: 32px;
     }
   }
 }

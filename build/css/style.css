@@ -2582,7 +2582,8 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
             align-items: center;
     padding-top: 31px;
     padding-bottom: 24px;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
   .question__number {
     font-size: 28px;
     font-weight: 700;
@@ -2607,9 +2608,7 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     top: 35px;
     right: 36px;
     background: rgba(0, 0, 0, 0);
-    border: none;
-    cursor: pointer;
-    padding: 5px; }
+    border: none; }
     @media (max-width: 768px) {
       .question__btn {
         right: 0; } }
@@ -2631,13 +2630,16 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     display: block;
     line-height: 21px;
     opacity: 0.74;
-    margin-bottom: 32px;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
     max-height: 0;
     overflow: hidden; }
+    @media (max-width: 768px) {
+      .question__answer {
+        width: 288px; } }
     .question__answer_active {
-      max-height: 300px; }
+      max-height: 300px;
+      margin-bottom: 32px; }
 
 @font-face {
   font-family: "Raleway";

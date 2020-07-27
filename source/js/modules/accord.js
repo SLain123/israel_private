@@ -1,44 +1,65 @@
 function accord() {
-  const allBtn = document.querySelectorAll(`.question__btn`);
+  const allItems = document.querySelectorAll(`.question__item`);
   const allAnswer = document.querySelectorAll(`.question__answer`);
 
-  const displayItem = function (evt) {
-    let btn = detectActiveBtn(evt);
-    let numberItem = btn.getAttribute(`data-btn`);
+  const detectRightItem = function (evt) {
+    let currentArr = evt.path;
+    let currentItem;
+    currentArr.forEach(function (elem) {
+      if (elem.tagName === `LI`) {
+        currentItem = elem;
+      }
+    });
 
+    let answerBlock = currentItem.nextElementSibling;
+
+    return answerBlock;
+  };
+
+  const displayAnswer = function () {
     allAnswer.forEach(function (elem) {
-      if (elem.getAttribute(`data-answer`) === numberItem) {
+      if (
+        elem.getAttribute(`data-answer`) === `true` &&
+        !elem.classList.contains(`question__answer_active`)
+      ) {
         elem.classList.add(`question__answer_active`);
-        console.log(elem.scrollHeight);
-        window.scrollBy(0, elem.scrollHeight);
+      } else {
+        elem.classList.remove(`question__answer_active`);
       }
     });
   };
 
-  const detectActiveBtn = function (evt) {
-    let click = evt.target.tagName;
-    let btn;
-    if (click === `BUTTON`) {
-      btn = evt.target;
-    } else if (click === `svg`) {
-      btn = evt.target.parentElement;
-    } else {
-      btn = evt.target.parentElement.parentElement;
-    }
-
-    return btn;
-  };
-
-  const hideAllItems = function () {
+  const selectActiveAnswer = function (block) {
     allAnswer.forEach(function (elem) {
-      elem.classList.remove(`question__answer_active`);
+      elem.setAttribute(`data-answer`, `false`);
     });
+
+    block.setAttribute(`data-answer`, `true`);
   };
 
-  allBtn.forEach(function (elem) {
+  const displayRightArrow = function (block) {
+    let rightQuestionBlock = block.previousElementSibling;
+    let rightUseTag = rightQuestionBlock.querySelector(`use`);
+
+    allItems.forEach(function (elem) {
+      let useTag = elem.querySelector(`use`);
+
+      useTag.setAttribute(`xlink:href`, `#arrow_down`);
+    });
+
+    if (
+      block.getAttribute(`data-answer`) === `true` &&
+      block.classList.contains(`question__answer_active`)
+    ) {
+      rightUseTag.setAttribute(`xlink:href`, `#arrow_up`);
+    }
+  };
+
+  allItems.forEach(function (elem) {
     elem.addEventListener(`click`, function (evt) {
-      hideAllItems();
-      displayItem(evt);
+      selectActiveAnswer(detectRightItem(evt));
+      displayAnswer();
+      displayRightArrow(detectRightItem(evt));
     });
   });
 }
