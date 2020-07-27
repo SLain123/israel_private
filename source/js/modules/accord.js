@@ -2,6 +2,8 @@ function accord() {
   const allItems = document.querySelectorAll(`.question__item`);
   const allAnswer = document.querySelectorAll(`.question__answer`);
 
+  // Функция возвращающая строку по которой был сделан клик вне зависимости от элемента клика
+
   const detectRightItem = function (evt) {
     let currentArr = evt.path;
     let currentItem;
@@ -16,6 +18,8 @@ function accord() {
     return answerBlock;
   };
 
+  // Функция отображающая целевой блок ответа и скрывающая остальные
+
   const displayAnswer = function () {
     allAnswer.forEach(function (elem) {
       if (
@@ -29,6 +33,8 @@ function accord() {
     });
   };
 
+  // Функция проставляющая нужные атрибуты-метки на активный и пассвные блоки ответов
+
   const selectActiveAnswer = function (block) {
     allAnswer.forEach(function (elem) {
       elem.setAttribute(`data-answer`, `false`);
@@ -36,6 +42,8 @@ function accord() {
 
     block.setAttribute(`data-answer`, `true`);
   };
+
+  // Функция переопределяющая svg стрелки в блоках вопросов (вверх, вниз)
 
   const displayRightArrow = function (block) {
     let rightQuestionBlock = block.previousElementSibling;
@@ -54,6 +62,8 @@ function accord() {
       rightUseTag.setAttribute(`xlink:href`, `#arrow_up`);
     }
   };
+
+  // Событие клика на блоке
 
   allItems.forEach(function (elem) {
     elem.addEventListener(`click`, function (evt) {

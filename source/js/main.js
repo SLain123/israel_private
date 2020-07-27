@@ -6,6 +6,7 @@ import scroll from "./modules/scroll"; // Скрипт нижнего скрол
 import {setServicesSlider, tabs} from "./modules/tabs"; // Инициализация свайпера и подключение табов;
 import {setServicesSecondSlider} from "./modules/life"; // Инициализация свайпера и подключение слайдера из блока о жизни;
 import accord from "./modules/accord"; // Скрипт для аккорджеона;
+import enableSwiperFeedback from "./modules/feedback"; // Инициализация слайдера в разделе отзывы;
 
 // Utils
 // ---------------------------------
@@ -23,3 +24,4 @@ setServicesSlider();
 tabs();
 setServicesSecondSlider();
 accord();
+enableSwiperFeedback();

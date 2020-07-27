@@ -16,7 +16,7 @@
 
   &_position {
     max-width: 1366px;
-    margin: 57px auto 0 auto;
+    margin: 57px auto 150px auto;
     padding-top: 79px;
     height: 1000px;
     position: relative;
@@ -24,6 +24,7 @@
     @include w-768 {
       margin-top: 0;
       padding: 0;
+      margin-bottom: 200px;
     }
   }
 
@@ -52,7 +53,7 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 500px;
+    padding-bottom: 200px;
 
     @include w-1024 {
       justify-content: center;
