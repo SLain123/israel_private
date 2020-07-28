@@ -2013,8 +2013,11 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     white-space: nowrap; }
     .want-way__phone-btn:focus {
       border-radius: 150px;
-      border: 2px #1fc0fc solid;
+      -webkit-box-shadow: 2px 2px 0 #1fc0fc, -2px -2px 0 #1fc0fc, -2px 2px 0 #1fc0fc, 2px -2px 0 #1fc0fc;
+              box-shadow: 2px 2px 0 #1fc0fc, -2px -2px 0 #1fc0fc, -2px 2px 0 #1fc0fc, 2px -2px 0 #1fc0fc;
       outline: none; }
+    .want-way__phone-btn:hover {
+      background: #ffc341; }
     @media (max-width: 768px) {
       .want-way__phone-btn {
         width: 264px;
@@ -2493,6 +2496,13 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     @media (max-width: 768px) {
       .masa__link {
         margin: 48px auto; } }
+    .masa__link:focus {
+      border-radius: 150px;
+      -webkit-box-shadow: 2px 2px 0 #1fc0fc, -2px -2px 0 #1fc0fc, -2px 2px 0 #1fc0fc, 2px -2px 0 #1fc0fc;
+              box-shadow: 2px 2px 0 #1fc0fc, -2px -2px 0 #1fc0fc, -2px 2px 0 #1fc0fc, 2px -2px 0 #1fc0fc;
+      outline: none; }
+    .masa__link:hover {
+      background: #ffc341; }
   .masa__link-img {
     margin-right: 16px; }
   .masa__link-text {
@@ -2585,6 +2595,8 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     padding-bottom: 24px;
     position: relative;
     cursor: pointer; }
+    .question__item:hover {
+      opacity: 0.85; }
   .question__number {
     font-size: 28px;
     font-weight: 700;
@@ -2609,7 +2621,8 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     top: 35px;
     right: 36px;
     background: rgba(0, 0, 0, 0);
-    border: none; }
+    border: none;
+    cursor: pointer; }
     @media (max-width: 768px) {
       .question__btn {
         right: 0; } }
@@ -2811,12 +2824,22 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
     z-index: 10;
-    cursor: pointer; }
+    cursor: pointer;
+    border: none;
+    background: rgba(0, 0, 0, 0); }
+    .feedback__control-prev:hover {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8); }
   .feedback__control-next {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
     z-index: 10;
-    cursor: pointer; }
+    cursor: pointer;
+    border: none;
+    background: rgba(0, 0, 0, 0); }
+    .feedback__control-next:hover {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8); }
   .feedback__soc-block {
     position: relative;
     top: -50px;
@@ -2838,6 +2861,8 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
     margin: 0 7px;
     cursor: pointer;
     z-index: 10; }
+    .feedback__soc-link:hover {
+      stroke: #ffc341; }
 
 @font-face {
   font-family: "Raleway";

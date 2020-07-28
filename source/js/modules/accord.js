@@ -8,8 +8,10 @@ function accord() {
     let currentArr = evt.path;
     let currentItem;
     currentArr.forEach(function (elem) {
-      if (elem.tagName === `LI`) {
-        currentItem = elem;
+      if (elem.tagName === `DIV`) {
+        if (elem.classList.contains(`question__item`)) {
+          currentItem = elem;
+        }
       }
     });
 

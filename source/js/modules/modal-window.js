@@ -56,18 +56,6 @@ function modalWindow() {
     return window.innerWidth - document.documentElement.clientWidth;
   };
 
-  // Функция заполнит форму из localStorage
-
-  // Функция активации чекбокса
-
-  const activateCheckBox = function () {
-    if (checkbox.checked) {
-      checkbox.checked = false;
-    } else {
-      checkbox.checked = true;
-    }
-  };
-
   // Функции скрытия модального окна "Заявка принята"
 
   const hideAccept = function () {
@@ -116,7 +104,6 @@ function modalWindow() {
   closeBtnModalRing.addEventListener(`click`, hideModal);
   closeBtnModalAccept.addEventListener(`click`, hideAccept);
   overlay.addEventListener(`mousedown`, checkClickOutOfBorder);
-  label.addEventListener(`click`, activateCheckBox);
   okBtn.addEventListener(`click`, hideAccept);
 
   secondSendBtn.addEventListener(`click`, function () {

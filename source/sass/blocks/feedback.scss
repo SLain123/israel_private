@@ -239,6 +239,12 @@
     transform: scale(1.5);
     z-index: 10;
     cursor: pointer;
+    border: none;
+    background: $transparent;
+
+    &:hover {
+      transform: scale(1.8);
+    }
   }
 
   // .feedback__control-next
@@ -247,6 +253,12 @@
     transform: scale(1.5);
     z-index: 10;
     cursor: pointer;
+    border: none;
+    background: $transparent;
+
+    &:hover {
+      transform: scale(1.8);
+    }
   }
 
   // .feedback__soc-block
@@ -274,6 +286,10 @@
     margin: 0 7px;
     cursor: pointer;
     z-index: 10;
+
+    &:hover {
+      stroke: $yellow;
+    }
   }
 }
 
