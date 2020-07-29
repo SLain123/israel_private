@@ -75,7 +75,7 @@ function modalWindow() {
   const fillForm = function () {
     let dataMain = JSON.parse(localStorage.getItem(`data`));
     if (dataMain !== null) {
-      let { name, phone } = dataMain;
+      let {name, phone} = dataMain;
 
       inputName.value = name;
       inputPhone.value = phone;

@@ -74,7 +74,6 @@
   // .feedback__container
 
   &__container {
-
     @include w-768 {
       display: flex;
       flex-flow: column;
@@ -85,7 +84,6 @@
   // .feedback__wrapper
 
   &__wrapper {
-
     @include w-768 {
       order: 2;
     }
@@ -107,17 +105,11 @@
   // .feedback__customer-photo
 
   &__customer-photo {
-
     @include w-768 {
       width: 240px;
       height: 320px;
       margin: 0 auto;
     }
-  }
-
-  // .feedback__customer-img
-
-  &__customer-img {
   }
 
   // .feedback__info
@@ -215,12 +207,10 @@
     }
 
     @include w-768 {
-      left: 0;
       order: 1;
       position: absolute;
       top: 325px;
       left: 120px;
-
     }
   }
 
@@ -293,5 +283,3 @@
     }
   }
 }
-
-

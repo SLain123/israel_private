@@ -2161,7 +2161,7 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
         width: 290px;
         font-size: 14px;
         line-height: 22.4px; } }
-    .how-way__exstra-text:before {
+    .how-way__exstra-text::before {
       content: "";
       min-width: 4px;
       height: 42px;
@@ -2169,7 +2169,7 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
       display: block;
       margin-right: 14px; }
       @media (max-width: 768px) {
-        .how-way__exstra-text:before {
+        .how-way__exstra-text::before {
           height: 88px;
           margin-right: 10px; } }
   .how-way__exstra-bg {
@@ -2809,7 +2809,6 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
         margin-top: 30px; } }
     @media (max-width: 768px) {
       .feedback__control-block {
-        left: 0;
         -webkit-box-ordinal-group: 2;
             -ms-flex-order: 1;
                 order: 1;

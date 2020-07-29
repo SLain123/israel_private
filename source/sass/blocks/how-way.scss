@@ -176,7 +176,7 @@
       line-height: 22.4px;
     }
 
-    &:before {
+    &::before {
       content: "";
       min-width: 4px;
       height: 42px;

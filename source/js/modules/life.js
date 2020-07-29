@@ -24,4 +24,4 @@ const setServicesSecondSlider = () => {
   breakpointChecker();
 };
 
-export { setServicesSecondSlider };
+export {setServicesSecondSlider};
