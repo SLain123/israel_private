@@ -1,0 +1,407 @@
+// main: ../style.scss
+
+.detail {
+  background-image: url("../img/bg/contact_bg.jpg");
+  background-repeat: no-repeat;
+  background-position-y: -90px;
+  background-size: 1326px;
+
+  @include retina {
+    background-image: url("../img/bg/contact_bg@2x.jpg");
+  }
+
+  @include w-768 {
+    background-image: none;
+  }
+
+  // .detail_position
+
+  &_position {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding-bottom: 55px;
+
+    @include w-768 {
+      padding-bottom: 64px;
+    }
+  }
+
+  // .detail__content
+
+  &__content {
+    margin-left: 100px;
+    display: flex;
+    flex-flow: wrap;
+
+    @include w-1366 {
+      margin-left: 20px;
+    }
+
+    @include w-768 {
+      max-width: 320px;
+      margin: 0 auto;
+      flex-flow: column;
+    }
+  }
+
+  // .detail__contact
+
+  &__contact {
+    max-width: 515px;
+    margin-right: 35px;
+
+    @include w-1366 {
+      margin-right: 10px;
+      width: 45%;
+      max-width: none;
+    }
+
+    @include w-768 {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  // .detail__title
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 52px;
+    line-height: 39px;
+
+    @include w-768 {
+      text-align: center;
+      width: 288px;
+      margin-bottom: 24px;
+    }
+  }
+
+  // .detail__city-block
+
+  &__city-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 39px;
+
+    @include w-768 {
+      width: 250px;
+      margin-left: 20px;
+    }
+  }
+
+  // .detail__city-link
+
+  &__city-link {
+    display: flex;
+    align-items: center;
+    color: $black;
+    text-decoration: none;
+
+    &:hover .detail__gps-img {
+      opacity: 0.8;
+    }
+
+    &:hover .detail__city-name {
+      opacity: 0.6;
+    }
+  }
+
+  // .detail__marker-img
+
+  &__marker-img {
+    margin-right: 6px;
+  }
+
+  // .detail__text
+
+  &__text {
+    line-height: 22px;
+    opacity: 0.74;
+  }
+
+  // .detail__city-name
+
+  &__city-name {
+    margin-left: 16px;
+    margin-right: 9px;
+    font-weight: 500;
+    line-height: 22px;
+    opacity: 0.74;
+    text-transform: uppercase;
+    border-bottom: 1px dashed $blue;
+  }
+
+  // .detail__manager-block
+
+  &__manager-block {
+    display: flex;
+    margin-bottom: 32px;
+
+    @include w-768 {
+      margin-left: 16px;
+      flex-flow: column;
+    }
+  }
+
+  // .detail__manager-img
+
+  &__manager-img {
+    width: 112px;
+    height: 112px;
+    min-width: 112px;
+    margin-right: 20px;
+
+    @include w-768 {
+      margin-bottom: 16px;
+    }
+  }
+
+  // .detail__master
+
+  &__master {
+    line-height: 22px;
+    margin-top: 0;
+
+    // .detail__master_blue
+
+    &_blue {
+      color: $blue;
+      margin-right: 8px;
+    }
+  }
+
+  // .detail__addr
+
+  &__addr {
+    font-size: 13px;
+    line-height: 19px;
+    opacity: 0.74;
+    max-width: 264px;
+  }
+
+  // .detail__soc
+
+  &__soc {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  // .detail__soc-link
+
+  &__soc-link {
+    margin: 0 6px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      stroke: $yellow;
+      stroke-width: 2px;
+    }
+  }
+
+  // .detail__exstra-text
+
+  &__exstra-text {
+    max-width: 480px;
+    font-size: 17px;
+    line-height: 29px;
+    opacity: 0.87;
+
+    @include w-768 {
+      font-size: 16px;
+      line-height: 26px;
+      margin-left: 16px;
+    }
+  }
+
+  // .detail__map
+
+  &__map {
+    width: 700px;
+    height: 448px;
+
+    @include w-1366 {
+      width: 53%;
+      height: auto;
+    }
+
+    @include w-768 {
+      width: 100%;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
+  }
+
+  // .detail__send-block
+
+  &__send-block {
+    max-width: 1142px;
+    display: flex;
+    margin-top: 64px;
+
+    @include w-1024 {
+      max-width: none;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+
+    @include w-768 {
+      flex-flow: column;
+      margin-top: 0;
+      max-width: 320px;
+    }
+  }
+
+  // .detail__send-info
+
+  &__send-info {
+    max-width: 364px;
+
+    @include w-768 {
+      margin-bottom: 32px;
+      padding-left: 16px;
+    }
+  }
+
+  // .detail__send-title
+
+  &__send-title {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    opacity: 0.87;
+    max-width: 328px;
+    margin-bottom: 12px;
+  }
+
+  // .detail__send-sub-title
+
+  &__send-sub-title {
+    font-size: 13px;
+    line-height: 19px;
+    opacity: 0.5;
+  }
+
+  // .detail__form
+
+  &__form {
+    display: flex;
+    align-items: center;
+    max-width: 778px;
+    position: relative;
+    margin-left: 14px;
+    top: -20px;
+    max-height: 131px;
+
+    @include w-1024 {
+      flex-flow: column;
+      max-width: 320px;
+      margin: 0;
+      max-height: none;
+    }
+
+    // .detail__name/phone
+
+    & input[type="text"] {
+      width: 250px;
+      height: 59px;
+      border-radius: 80px;
+      padding: 19px 0 20px 40px;
+      opacity: 0.87;
+      font-size: 17px;
+      font-weight: 500;
+      color: $black;
+      margin-right: 24px;
+
+      &:focus {
+        border: 2px solid $yellow;
+        outline: none;
+      }
+
+      @include w-1024 {
+        margin: 4px 0;
+      }
+
+      @include w-768 {
+        width: 288px;
+      }
+    }
+  }
+
+  // .detail__error-text
+
+  &__error-text {
+    color: $red;
+    margin: 0;
+    font-size: 13px;
+    line-height: 150%;
+    opacity: 0.75;
+    position: absolute;
+    top: 95px;
+
+    // .detail__error-text_visible
+
+    &_visible {
+      visibility: visible;
+    }
+
+    // detail_error_top
+
+    &_top {
+      left: 35px;
+
+      @include w-1024 {
+        top: -20px;
+      }
+    }
+
+    // detail_error_bottom
+
+    &_bottom {
+      left: 315px;
+
+      @include w-1024 {
+        left: 35px;
+        top: 132px;
+      }
+    }
+
+    @include w-768 {
+      left: 65px;
+    }
+  }
+
+  // button form
+
+  & button {
+    min-width: 216px;
+    height: 59px;
+    border-radius: 80px;
+    background: $grad;
+    border: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    color: $white;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:focus {
+      border: 2px $blue solid;
+      outline: none;
+    }
+
+    &:hover {
+      background: $yellow;
+    }
+
+    @include w-1024 {
+      margin-top: 20px;
+    }
+
+    @include w-768 {
+      width: 264px;
+    }
+  }
+}

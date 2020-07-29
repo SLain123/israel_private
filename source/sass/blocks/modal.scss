@@ -61,3 +61,24 @@
   height: 100%;
   overflow: hidden;
 }
+
+.form-right {
+  border: 2px solid $grey;
+}
+
+// .error-text
+
+.error-text {
+  color: $red;
+  margin: 0;
+  font-size: 13px;
+  line-height: 150%;
+  opacity: 0.75;
+  visibility: hidden;
+
+  // .error-text_visible
+
+  &_visible {
+    visibility: visible;
+  }
+}

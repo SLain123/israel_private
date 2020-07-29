@@ -18,7 +18,7 @@
   // .feedback_position
 
   &_position {
-    margin: 0 auto 100px auto;
+    margin: 0 auto;
     max-width: 1366px;
     min-height: 480px;
   }
@@ -289,6 +289,7 @@
 
     &:hover {
       stroke: $yellow;
+      stroke-width: 2px;
     }
   }
 }

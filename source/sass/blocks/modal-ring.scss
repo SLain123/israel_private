@@ -168,23 +168,6 @@
   &__cls-btn-img:hover {
     opacity: 0.8;
   }
-
-  // .modal-ring__error-text
-
-  &__error-text {
-    color: $red;
-    margin: 0;
-    font-size: 13px;
-    line-height: 150%;
-    opacity: 0.75;
-    visibility: hidden;
-
-    // .modal-ring__error-text_visible
-
-    &_visible {
-      visibility: visible;
-    }
-  }
 }
 
 .modal-ring__form {
@@ -238,12 +221,6 @@
     @include w-768 {
       margin-left: 5px;
     }
-  }
-
-  // modal-ring__form_right
-
-  &_right {
-    border: 2px solid $grey;
   }
 
   // modal-ring__form_error
