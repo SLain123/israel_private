@@ -35,6 +35,7 @@
 
     @include w-1366 {
       margin-left: 20px;
+      justify-content: space-between;
     }
 
     @include w-768 {
@@ -234,12 +235,19 @@
     }
   }
 
+  // .detail__map-img
+
+  &__map-img {
+    width: 100%;
+  }
+
   // .detail__send-block
 
   &__send-block {
     max-width: 1142px;
     display: flex;
     margin-top: 64px;
+    padding-right: 16px;
 
     @include w-1024 {
       max-width: none;
