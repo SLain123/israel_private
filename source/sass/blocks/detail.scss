@@ -18,18 +18,19 @@
 
   &_position {
     max-width: 1366px;
-    margin: 0 auto;
-    padding-bottom: 55px;
+    margin: 60px auto 0 auto;
+    padding-bottom: 40px;
 
     @include w-768 {
-      padding-bottom: 64px;
+      padding-bottom: 44px;
+      margin-top: 65px;
     }
   }
 
   // .detail__content
 
   &__content {
-    margin-left: 100px;
+    margin-left: 110px;
     display: flex;
     flex-flow: wrap;
 
@@ -72,7 +73,7 @@
 
     @include w-768 {
       text-align: center;
-      width: 288px;
+      width: 320px;
       margin-bottom: 24px;
     }
   }
@@ -178,6 +179,10 @@
     line-height: 19px;
     opacity: 0.74;
     max-width: 264px;
+
+    @include w-768 {
+      max-width: 274px;
+    }
   }
 
   // .detail__soc
@@ -214,6 +219,7 @@
       font-size: 16px;
       line-height: 26px;
       margin-left: 16px;
+      max-width: 252px;
     }
   }
 
@@ -231,7 +237,7 @@
     @include w-768 {
       width: 100%;
       margin-top: 40px;
-      margin-bottom: 24px;
+      margin-bottom: 10px;
     }
   }
 
@@ -246,7 +252,7 @@
   &__send-block {
     max-width: 1142px;
     display: flex;
-    margin-top: 64px;
+    margin-top: 50px;
     padding-right: 16px;
 
     @include w-1024 {
@@ -302,12 +308,14 @@
     margin-left: 14px;
     top: -20px;
     max-height: 131px;
+    padding-left: 29px;
 
     @include w-1024 {
       flex-flow: column;
       max-width: 320px;
       margin: 0;
       max-height: none;
+      padding-left: 16px;
     }
 
     // .detail__name/phone

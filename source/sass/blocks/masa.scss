@@ -11,8 +11,8 @@
 
   @include w-768 {
     background-size: 200%;
-    background-position-x: -60px;
-    background-position-y: 30px;
+    background-position-x: -80px;
+    background-position-y: 45px;
   }
 
   // .masa_position
@@ -32,7 +32,7 @@
   &__content {
     position: relative;
     top: 145px;
-    left: 791px;
+    left: 800px;
     width: 395px;
     height: 267px;
 
@@ -48,18 +48,20 @@
       width: 300px;
       left: 0;
       top: 0;
-      margin: 81px auto 0 auto;
+      margin: 51px auto 0 auto;
     }
   }
 
   // .masa__title
 
   &__title {
-    margin-bottom: 24px;
+    margin-bottom: 35px;
 
     @include w-768 {
       text-align: center;
-      margin-bottom: 101px;
+      margin-bottom: 95px;
+      font-size: 40px;
+      line-height: 49px;
     }
   }
 
@@ -75,6 +77,7 @@
     @include w-768 {
       max-width: 272px;
       margin: 0 auto;
+      line-height: 26px
     }
   }
 
@@ -92,7 +95,8 @@
     margin-top: 48px;
 
     @include w-768 {
-      margin: 48px auto;
+      width: 264px;
+      margin: 58px auto;
     }
 
     &:focus {

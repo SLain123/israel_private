@@ -1,5 +1,5 @@
 const setServicesSecondSlider = () => {
-  const breakpoint = window.matchMedia(`(min-width:768px)`);
+  const breakpoint = window.matchMedia(`(min-width:769px)`);
   let servicesSlider;
   const breakpointChecker = function () {
     if (breakpoint.matches === true) {

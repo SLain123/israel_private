@@ -1,7 +1,7 @@
 // main: ../style.scss
 
 .main {
-  min-height: 906px;
+  min-height: 850px;
   max-width: 1366px;
   margin: 0 auto;
 
@@ -10,7 +10,7 @@
   }
 
   @include w-768 {
-    min-height: 617px;
+    min-height: 595px;
   }
   // .main__bg
 
@@ -57,7 +57,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 455px 0 0 0;
+    padding: 405px 0 0 0;
     margin: 0 auto;
 
     @include w-1024 {
@@ -65,7 +65,7 @@
     }
 
     @include w-768 {
-      padding-top: 245px;
+      padding-top: 235px;
     }
   }
 
@@ -81,7 +81,7 @@
     width: 343px;
 
     @include w-768 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-size: 20px;
       width: 297px;
     }

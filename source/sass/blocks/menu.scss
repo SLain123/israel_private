@@ -4,16 +4,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 110px;
+  padding: 0 30px;
   z-index: 1;
   position: relative;
   height: 52px;
+  margin: 32px auto;
 
   @include w-768 {
     padding: 0 13px;
     flex-flow: column wrap;
     align-items: space-between;
     justify-content: start;
+    margin: 15px auto;
   }
 
   @include w-320 {

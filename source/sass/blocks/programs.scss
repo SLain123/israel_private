@@ -22,24 +22,27 @@
   &_position {
     max-width: 1366px;
     padding-left: 40px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto;
 
     @include w-768 {
       margin-left: 0;
       padding-left: 0;
       margin-bottom: 100px;
+      padding-top: 55px;
     }
   }
 
   // .programs__title
 
   &__title {
-    margin-bottom: 91px;
+    margin-bottom: 78px;
+    margin-left: 95px;
 
     @include w-768 {
+      margin-left: 0;
       width: 100%;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
   }
 
@@ -47,17 +50,23 @@
 
   &__main-block {
     display: flex;
+    margin-left: 95px;
 
     @include w-768 {
       flex-flow: column;
+      margin-left: 0;
     }
   }
 
   // .programs__swiper-container
 
   &__swiper-container {
-    width: 315px;
+    width: 300px;
     margin: 0;
+
+    @include w-1024 {
+      width: 335px;
+    }
 
     @include w-768 {
       max-width: 690px;
@@ -207,7 +216,7 @@
 
     @include w-768 {
       width: 95%;
-      margin: 32px 16px 0 16px;
+      margin: 15px 16px 0 16px;
     }
   }
 
@@ -233,6 +242,7 @@
     letter-spacing: -0.56px;
     margin-top: 20px;
     text-transform: none;
+    margin-bottom: 18px;
 
     @include w-768 {
       font-size: 24px;
@@ -245,5 +255,9 @@
   &__info-text {
     opacity: 0.87;
     line-height: 25.5px;
+
+    @include w-768 {
+      line-height: 22px;
+    }
   }
 }
