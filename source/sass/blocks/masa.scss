@@ -12,7 +12,11 @@
   @include w-768 {
     background-size: 200%;
     background-position-x: -80px;
-    background-position-y: 45px;
+    background-position-y: 40%;
+  }
+
+  @include w-320 {
+    background-position-y: 40px;
   }
 
   // .masa_position
@@ -23,7 +27,7 @@
     min-height: 583px;
 
     @include w-768 {
-      min-height: 391px;
+      min-height: 421px;
     }
   }
 

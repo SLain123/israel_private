@@ -34,6 +34,7 @@
 
     &:hover {
       color: black;
+      text-decoration: underline;
     }
 
     @include w-768 {

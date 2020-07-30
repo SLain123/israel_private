@@ -55,7 +55,7 @@
     @include w-768 {
       margin: 0 auto;
       max-width: 300px;
-      padding: 0 6px;
+      padding: 0 1px;
     }
   }
 
@@ -156,6 +156,10 @@
     position: relative;
     z-index: 1;
     background-color: $white;
+
+    @include w-768 {
+      margin-right: 12px;
+    }
   }
 
   // .how-way__list-text

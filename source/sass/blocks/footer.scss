@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5px;
 
   @include w-768 {
     height: 197px;
@@ -43,6 +44,8 @@
 
     @include w-768 {
       margin: 0;
+      margin-bottom: 10px;
+      margin-right: 10px;
     }
   }
 
@@ -50,6 +53,10 @@
 
   &__soc-link {
     margin: 0 10px;
+
+    @include w-768 {
+      margin: 0 14px;
+    }
 
     &:first-child {
       margin-left: 0;

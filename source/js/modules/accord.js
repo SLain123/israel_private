@@ -4,18 +4,8 @@ function accord() {
 
   // Функция возвращающая строку по которой был сделан клик вне зависимости от элемента клика
 
-  const detectRightItem = function (evt) {
-    let currentArr = evt.path;
-    let currentItem;
-    currentArr.forEach(function (elem) {
-      if (elem.tagName === `DIV`) {
-        if (elem.classList.contains(`question__item`)) {
-          currentItem = elem;
-        }
-      }
-    });
-
-    let answerBlock = currentItem.nextElementSibling;
+  const detectRightItem = function (that) {
+    let answerBlock = that.nextElementSibling;
 
     return answerBlock;
   };
@@ -68,10 +58,10 @@ function accord() {
   // Событие клика на блоке
 
   allItems.forEach(function (elem) {
-    elem.addEventListener(`click`, function (evt) {
-      selectActiveAnswer(detectRightItem(evt));
+    elem.addEventListener(`click`, function () {
+      selectActiveAnswer(detectRightItem(this));
       displayAnswer();
-      displayRightArrow(detectRightItem(evt));
+      displayRightArrow(detectRightItem(this));
     });
   });
 }
