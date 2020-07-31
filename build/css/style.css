@@ -1881,13 +1881,11 @@ input:matches([type="email"], [type="number"], [type="password"], [type="search"
         width: 95%;
         margin: 15px 16px 0 16px; } }
   .programs__info-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease; }
     .programs__info-container_hide {
-      opacity: 0; }
+      display: none; }
   .programs__info-title {
     font-size: 28px;
     letter-spacing: -0.56px;

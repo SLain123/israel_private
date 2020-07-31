@@ -223,15 +223,13 @@
   // .programs__info-container
 
   &__info-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     transition: $default-transition-settings;
 
     // .programs__info-container_hide
 
     &_hide {
-      opacity: 0;
+      display: none;
     }
   }
 
